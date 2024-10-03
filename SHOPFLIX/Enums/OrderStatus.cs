@@ -1,7 +1,7 @@
 ﻿namespace SHOPFLIX
 { 
     /// <summary>
-    /// Provides enumeration over the order status
+    /// Provides enumeration over the order statuses
     /// </summary>
     public enum OrderStatus
     {

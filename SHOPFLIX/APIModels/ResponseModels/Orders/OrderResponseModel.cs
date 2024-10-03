@@ -93,7 +93,7 @@ namespace SHOPFLIX
         /// The order total
         /// </summary>
         [JsonProperty("total")]
-        public double Total { get; set; }
+        public decimal Total { get; set; }
 
         /// <summary>
         /// The invoice id

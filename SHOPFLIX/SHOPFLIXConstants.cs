@@ -28,5 +28,32 @@ namespace SHOPFLIX
             {OrderStatus.Completed, "C" }
         };
 
+        /// <summary>
+        /// Maps the <see cref="ReturnStatus"/>es to their related <see cref="string"/>s
+        /// </summary>
+        public static Dictionary<ReturnStatus, string> ReturnStatusToStringMapper { get; } = new Dictionary<ReturnStatus, string>()
+        {
+            {ReturnStatus.ReturnRequested, "U" },
+            {ReturnStatus.OnTheWayToTheStore, "A" },
+            {ReturnStatus.DeliveredToTheStore, "T" },
+            {ReturnStatus.ReturnCompleted, "V" },
+            {ReturnStatus.ProcessingReturn, "W" },
+            {ReturnStatus.ReturnDeclined, "X" }
+        };
+
+        /// <summary>
+        /// Maps the <see cref="ShipmentStatus"/>es to their related <see cref="string"/>s
+        /// </summary>
+        public static Dictionary<ShipmentStatus, string> ShipmentStatusToStringMapper { get; } = new Dictionary<ShipmentStatus, string>()
+        {
+            {ShipmentStatus.Processing, "P" },
+            {ShipmentStatus.ToBeDelivered, "A" },
+            {ShipmentStatus.Shipped, "S" },
+            {ShipmentStatus.Delivered, "B" },
+            {ShipmentStatus.FailedToDeliver, "C" },
+            {ShipmentStatus.Cancelled, "D" },
+            {ShipmentStatus.ReturnedToStore, "E" },
+            {ShipmentStatus.SellerToBeRefunded, "F" }
+        };
     }
 }

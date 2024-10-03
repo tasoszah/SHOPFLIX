@@ -3,21 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 
 namespace SHOPFLIX
-{
+{   
     /// <summary>
-    /// A <see cref="JsonConverter{T}"/> for converting an <see cref="OrderStatus"/> to a <see cref="string"/>
+    /// A <see cref="JsonConverter{T}"/> for converting an <see cref="ReturnStatus"/> to a <see cref="string"/>
     /// </summary>
-    public class OrderStatusToStringJsonConverter : BaseEnumToStringJsonConverter<OrderStatus>
+    public class ReturnStatusToStringJsonConverter : BaseEnumToStringJsonConverter<ReturnStatus>
     {
         #region Constructors
 
         /// <summary>
         /// Default constructor
         /// </summary>
-        public OrderStatusToStringJsonConverter()
+        public ReturnStatusToStringJsonConverter()
         {
 
         }
@@ -27,9 +26,9 @@ namespace SHOPFLIX
         #region Protected Methods
 
         /// <inheritdoc/>
-        protected override Dictionary<OrderStatus, string> GetMapper()
+        protected override Dictionary<ReturnStatus, string> GetMapper()
         {
-            return SHOPFLIXConstants.OrderStatusToStringMapper;
+            return SHOPFLIXConstants.ReturnStatusToStringMapper;
         }
 
         #endregion

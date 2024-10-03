@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 namespace SHOPFLIX
 {
     /// <summary>
-    /// Represents a product in the <see cref="OrderResponseModel"/> 
+    /// Represents base info of a product in the <see cref="OrderResponseModel"/>  and the <see cref="ReturnResponseModel"/>
     /// </summary>
-    public class OrderProductResponseModel
+    public class BaseProductResponseModel
     {
         #region Public Properties
 
@@ -44,12 +44,6 @@ namespace SHOPFLIX
         [JsonProperty("amount")]
         public int Amount { get; set; }
 
-        /// <summary>
-        /// Extra information
-        /// </summary>
-        [JsonProperty("extra")]
-        public List<OrderProductExtraResponseModel> Extra { get; set; }
-
         #endregion
 
         #region Constructors
@@ -57,7 +51,7 @@ namespace SHOPFLIX
         /// <summary>
         /// The default constructor
         /// </summary>
-        public OrderProductResponseModel()
+        public BaseProductResponseModel()
         {
 
         }
