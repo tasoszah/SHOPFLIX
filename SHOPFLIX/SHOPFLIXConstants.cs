@@ -14,7 +14,7 @@ namespace SHOPFLIX
         /// <summary>
         /// Maps the <see cref="OrderStatus"/>es to their related <see cref="string"/>s
         /// </summary>
-        public static Dictionary<OrderStatus, string> OrderStatusToStringMapper { get; } = new Dictionary<OrderStatus, string>()
+        public static IReadOnlyDictionary<OrderStatus, string> OrderStatusToStringMapper { get; } = new Dictionary<OrderStatus, string>()
         {
             {OrderStatus.Placed, "O" },
             {OrderStatus.Processing, "G" },
@@ -31,7 +31,7 @@ namespace SHOPFLIX
         /// <summary>
         /// Maps the <see cref="ReturnStatus"/>es to their related <see cref="string"/>s
         /// </summary>
-        public static Dictionary<ReturnStatus, string> ReturnStatusToStringMapper { get; } = new Dictionary<ReturnStatus, string>()
+        public static IReadOnlyDictionary<ReturnStatus, string> ReturnStatusToStringMapper { get; } = new Dictionary<ReturnStatus, string>()
         {
             {ReturnStatus.ReturnRequested, "U" },
             {ReturnStatus.OnTheWayToTheStore, "A" },
@@ -44,7 +44,7 @@ namespace SHOPFLIX
         /// <summary>
         /// Maps the <see cref="ShipmentStatus"/>es to their related <see cref="string"/>s
         /// </summary>
-        public static Dictionary<ShipmentStatus, string> ShipmentStatusToStringMapper { get; } = new Dictionary<ShipmentStatus, string>()
+        public static IReadOnlyDictionary<ShipmentStatus, string> ShipmentStatusToStringMapper { get; } = new Dictionary<ShipmentStatus, string>()
         {
             {ShipmentStatus.Processing, "P" },
             {ShipmentStatus.ToBeDelivered, "A" },
@@ -54,6 +54,15 @@ namespace SHOPFLIX
             {ShipmentStatus.Cancelled, "D" },
             {ShipmentStatus.ReturnedToStore, "E" },
             {ShipmentStatus.SellerToBeRefunded, "F" }
+        };
+
+        /// <summary>
+        /// Maps the <see cref="VoucherFormat"/>s to their related <see cref="string"/>s
+        /// </summary>
+        public static IReadOnlyDictionary<VoucherFormat, string> VoucherFormatToStringMapper { get; } = new Dictionary<VoucherFormat, string>()
+        {
+            {VoucherFormat.Pdf , "PDF" },
+            {VoucherFormat.Clean, "Clean" }
         };
     }
 }

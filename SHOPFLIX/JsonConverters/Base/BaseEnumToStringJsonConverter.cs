@@ -58,7 +58,7 @@ namespace SHOPFLIX
         /// Gets a mapper between the <typeparamref name="TEnum"/> and their related <see cref="string"/>s
         /// </summary>
         /// <returns></returns>
-        protected abstract Dictionary<TEnum, string> GetMapper();
+        protected abstract IReadOnlyDictionary<TEnum, string> GetMapper();
 
         #endregion
     }

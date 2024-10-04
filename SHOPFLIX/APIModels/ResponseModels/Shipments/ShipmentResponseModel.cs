@@ -12,7 +12,6 @@ namespace SHOPFLIX
     /// </summary>
     public class ShipmentResponseModel
     {
-
         #region Public Properties
 
         /// <summary>
@@ -138,16 +137,23 @@ namespace SHOPFLIX
         [JsonProperty("cod_cost")]
         public decimal CodCost { get; set; }
 
-
-        /// public products TO BE FIXED
+        /// <summary>
+        /// The products of the shipment
+        /// </summary>
+        [JsonProperty("products")]
+        public object Products { get; set; }
 
         /// <summary>
         /// The group key
         /// </summary>
         [JsonProperty("group_key")]
-        public string GroupKey { get; set; }
+        public int GroupKey { get; set; }
 
-        ///public product info TO BE FIXED
+        /// <summary>
+        /// The information about the products
+        /// </summary>
+        [JsonProperty("products_info")]
+        public object ProductsInfo { get; set; }
 
         /// <summary>
         /// The carrier info

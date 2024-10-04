@@ -26,10 +26,8 @@ namespace SHOPFLIX
         #region Protected Methods
 
         /// <inheritdoc/>
-        protected override Dictionary<ReturnStatus, string> GetMapper()
-        {
-            return SHOPFLIXConstants.ReturnStatusToStringMapper;
-        }
+        protected override IReadOnlyDictionary<ReturnStatus, string> GetMapper() 
+            => SHOPFLIXConstants.ReturnStatusToStringMapper;
 
         #endregion
     }

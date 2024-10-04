@@ -1,43 +1,31 @@
 ﻿
 using SHOPFLIX;
 using System;
+using System.Collections.Generic;
+
+
+
+
+
+var dicks = SHOPFLIXConstants.ReturnStatusToStringMapper;
+
+var number = new int();
+
+var dateOnly = DateOnly.FromDateTime(DateTime.Now);
+
+var formattedDate = dateOnly.ToString("yyyy/MM/dd");
+
+var s = $"{dateOnly:yyyy/MM/dd} {0.5d:0.00}";
+
+
+var test = new List<string>
+{
+    "tasos",
+    "labros"
+};
+
+var r = APIRoutes.PrintOrderVoucherListRoute(false, test, VoucherFormat.Clean);
+
+Console.Write(r);
 
 Console.ReadLine();
-
-var fullOrder = new FullOrder()
-{
-    Name = "Test",
-    Number = 12,
-     Email = "paplabros@gmail.com"
-    //RecepientEmail = "paplabr@gmail.com",
-};
-
-var order = new Order()
-{
-    Name = "Test",
-    RecepientEmail = "paplabr@gmail.com",
-};
-
-public class BaseOrder
-{
-    public string Name { get; set; }
-
-    public int Number { get; set; }
-
-    public int Weight { get; set; }
-}
-
-public class Order : BaseOrder
-{
-    public string RecepientEmail { get; set; }
-}
-
-public class FullOrder : BaseOrder
-{
-    public string Address { get; set; }
-
-    public string Email { get; set; }
-
-
-    public object PaymentMethod { get; set; }
-}
