@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,19 @@ namespace SHOPFLIX
     /// </summary>
     public class CancelVoucherResponseModel
     {
+        #region Private Members 
+
+        /// <summary>
+        /// The member of the <see cref="Result"/> property
+        /// </summary>
+        private string? mResult;
+
+        /// <summary>
+        /// The member of the <see cref="Errors"/>
+        /// </summary>
+        private IEnumerable<ErrorResponseModel>? mErrors;
+
+        #endregion
 
         #region Public Properties
 
@@ -24,14 +38,26 @@ namespace SHOPFLIX
         /// <summary>
         /// The result
         /// </summary>
+        [AllowNull]
         [JsonProperty("Result")]
-        public string Result { get; set; }
+        public string Result
+        {
+            get => mResult ?? string.Empty;
+
+            set => mResult = value;
+        }
 
         /// <summary>
         /// A list of errors represented as an <see cref="ErrorResponseModel"/>
         /// </summary>
+        [AllowNull]
         [JsonProperty("Errors")]
-        public List<ErrorResponseModel> Errors { get; set; }
+        public IEnumerable<ErrorResponseModel> Errors
+        {
+            get => mErrors ?? Enumerable.Empty<ErrorResponseModel>();
+
+            set => mErrors = value;
+        }
 
         #endregion
 

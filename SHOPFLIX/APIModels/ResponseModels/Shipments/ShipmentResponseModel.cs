@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,65 @@ namespace SHOPFLIX
     /// </summary>
     public class ShipmentResponseModel
     {
+        #region Private Members
+
+        /// <summary>
+        /// The member of the <see cref="Comments"/> property
+        /// </summary>
+        private string? mComments;
+
+        /// <summary>
+        /// The member of the <see cref="SFirstName"/> property
+        /// </summary>
+        private string? mSFirstName;
+
+        /// <summary>
+        /// The member of the <see cref="SLastName"/> property
+        /// </summary>
+        private string? mSLastName;
+
+        /// <summary>
+        /// The member of the <see cref="FirstName"/> property
+        /// </summary>
+        private string? mFirstName;
+
+        /// <summary>
+        /// The member of the <see cref="LastName"/> property
+        /// </summary>
+        private string? mLastName;
+
+        /// <summary>
+        /// The member of the <see cref="Company"/> property
+        /// </summary>
+        private string? mCompany;
+
+        /// <summary>
+        /// The member of the <see cref="Shipping"/> property
+        /// </summary>
+        private string? mShipping;
+
+        /// <summary>
+        /// The member of the <see cref="TrackingNumber"/> property
+        /// </summary>
+        private string? mTrackingNumber;
+
+        /// <summary>
+        /// The member of the <see cref="Carrier"/> property
+        /// </summary>
+        private string? mCarrier;
+
+        /// <summary>
+        /// The member of the <see cref="FunshipChargeType"/> property
+        /// </summary>
+        private string? mFunshipChargeType;
+
+        /// <summary>
+        /// The member of the <see cref="FunshipShipmentStatus"/> property
+        /// </summary>
+        private string? mFunshipShipmentStatus;
+
+        #endregion
+
         #region Public Properties
 
         /// <summary>
@@ -30,8 +90,14 @@ namespace SHOPFLIX
         /// <summary>
         ///The comments
         /// </summary>
+        [AllowNull]
         [JsonProperty("comments")]
-        public string Comments { get; set; }
+        public string Comments
+        {
+            get => mComments ?? String.Empty;
+
+            set => mComments = value;
+        }
 
         /// <summary>
         /// The shipment status
@@ -56,32 +122,62 @@ namespace SHOPFLIX
         /// <summary>
         /// The shipment first name
         /// </summary>
+        [AllowNull]
         [JsonProperty("s_firstname")]
-        public string SFirstname { get; set; }
+        public string SFirstName
+        {
+            get => mSFirstName ?? String.Empty;
+
+            set => mSFirstName = value;
+        }
 
         /// <summary>
         /// The shipment last name
         /// </summary>
+        [AllowNull]
         [JsonProperty("s_lastname")]
-        public string SLastname { get; set; }
+        public string SLastName
+        {
+            get => mSLastName ?? String.Empty;
+
+            set => mSLastName = value;
+        }
 
         /// <summary>
         /// The billing first name
         /// </summary>
+        [AllowNull]
         [JsonProperty("firstname")]
-        public string Firstname { get; set; }
+        public string FirstName
+        {
+            get => mFirstName ?? String.Empty;
+
+            set => mFirstName = value;
+        }
 
         /// <summary>
         /// The billing last name
         /// </summary>
+        [AllowNull]
         [JsonProperty("lastname")]
-        public string Lastname { get; set; }
+        public string LastName
+        {
+            get => mLastName ?? String.Empty;
+
+            set => mLastName = value;
+        }
 
         /// <summary>
         /// The company name
         /// </summary>
+        [AllowNull]
         [JsonProperty("company")]
-        public string Company { get; set; }
+        public string Company
+        {
+            get => mCompany ?? String.Empty;
+
+            set => mCompany = value;
+        }
 
         /// <summary>
         /// The customer's id
@@ -98,32 +194,62 @@ namespace SHOPFLIX
         /// <summary>
         /// The shipping method
         /// </summary>
+        [AllowNull]
         [JsonProperty("shipping")]
-        public string Shipping { get; set; }
+        public string Shipping
+        {
+            get => mShipping ?? String.Empty;
+
+            set => mShipping = value;
+        }
 
         /// <summary>
         /// The tracking number
         /// </summary>
+        [AllowNull]
         [JsonProperty("tracking_number")]
-        public string TrackingNumber { get; set; }
-        
+        public string TrackingNumber
+        {
+            get => mTrackingNumber ?? String.Empty;
+
+            set => mTrackingNumber = value;
+        }
+
         /// <summary>
         /// The carrier name
         /// </summary>
+        [AllowNull]
         [JsonProperty("carrier")]
-        public string Carrier { get; set; }
+        public string Carrier
+        {
+            get => mCarrier ?? String.Empty;
+
+            set => mCarrier= value;
+        }
 
         /// <summary>
         /// The funship charge type
         /// </summary>
+        [AllowNull]
         [JsonProperty("funship_charge_type")]
-        public string FunshipChargeType { get; set; }
+        public string FunshipChargeType
+        {
+            get => mFunshipChargeType ?? String.Empty;
+
+            set => mFunshipChargeType = value;
+        }
 
         /// <summary>
         /// The funship shipment status
         /// </summary>
+        [AllowNull]
         [JsonProperty("funship_shipment_status")]
-        public string FunshipShipmentStatus { get; set; }
+        public string FunshipShipmentStatus
+        {
+            get => mFunshipShipmentStatus ?? String.Empty;
+
+            set => mFunshipShipmentStatus = value;
+        }
 
         /// <summary>
         /// The shipping cost
@@ -141,7 +267,7 @@ namespace SHOPFLIX
         /// The products of the shipment
         /// </summary>
         [JsonProperty("products")]
-        public object Products { get; set; }
+        public object? Products { get; set; }
 
         /// <summary>
         /// The group key
@@ -153,7 +279,7 @@ namespace SHOPFLIX
         /// The information about the products
         /// </summary>
         [JsonProperty("products_info")]
-        public object ProductsInfo { get; set; }
+        public object? ProductsInfo { get; set; }
 
         /// <summary>
         /// The carrier info

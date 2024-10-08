@@ -4,8 +4,9 @@ using System;
 using System.Collections.Generic;
 
 
+var voucher = new CreateVoucherResponseModel();
 
-
+var length = voucher.ShipmentNumber.Length;
 
 var dicks = SHOPFLIXConstants.ReturnStatusToStringMapper;
 

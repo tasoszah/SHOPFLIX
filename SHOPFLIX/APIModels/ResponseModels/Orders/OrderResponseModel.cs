@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,35 @@ namespace SHOPFLIX
     /// </summary>
     public class OrderResponseModel
     {
+        #region Private Members
+
+        /// <summary>
+        /// The member of the <see cref="IssuerId"/> property
+        /// </summary>
+        private string? mIssuerId;
+
+        /// <summary>
+        /// The member of the <see cref="FirstName"/> property
+        /// </summary>
+        private string? mFirstName;
+
+        /// <summary>
+        /// The member of the <see cref="LastName"/> property
+        /// </summary>
+        private string? mLastName;
+
+        /// <summary>
+        /// The member of the <see cref="Points"/> property
+        /// </summary>
+        private string? mPoints;
+
+        /// <summary>
+        /// The member of the <see cref="Products"/> property
+        /// </summary>
+        private IEnumerable<OrderProductResponseModel>? mProducts;
+
+        #endregion
+
         #region Public Properties
 
         /// <summary>
@@ -24,7 +54,12 @@ namespace SHOPFLIX
         /// The issuer id
         /// </summary>
         [JsonProperty("issuer_id")]
-        public string IssuerId { get; set; }
+        public string IssuerId
+        {
+            get => mIssuerId ?? string.Empty;
+
+            set => mIssuerId = value;
+        }
 
         /// <summary>
         /// The user id
@@ -61,26 +96,38 @@ namespace SHOPFLIX
         /// <summary>
         /// The first name
         /// </summary>
+        [AllowNull]
         [JsonProperty("firstname")]
-        public string FirstName { get; set; }
+        public string FirstName
+        {
+            get => mFirstName ?? String.Empty;
+
+            set => mFirstName = value;
+        }
 
         /// <summary>
         /// The last name
         /// </summary>
+        [AllowNull]
         [JsonProperty("lastname")]
-        public string LastName { get; set; }
+        public string LastName
+        {
+            get => mLastName ?? String.Empty;
+
+            set => mLastName = value;
+        }
 
         /// <summary>
         /// The email
         /// </summary>
         [JsonProperty("email")]
-        public string Email { get; set; }
+        public string? Email { get; set; }
 
         /// <summary>
         /// The phone number
         /// </summary>
         [JsonProperty("phone")]
-        public string Phone { get; set; }
+        public string? Phone { get; set; }
 
         /// <summary>
         /// The order status
@@ -110,14 +157,27 @@ namespace SHOPFLIX
         /// <summary>
         /// The points
         /// </summary>
+        [AllowNull]
         [JsonProperty("points")]
-        public string Points { get; set; }
+        public string Points
+        {
+            get => mPoints ?? String.Empty;
+
+            set => mPoints = value;
+        }
+
 
         /// <summary>
         /// The products of the order
         /// </summary>
+        [AllowNull]
         [JsonProperty("products")]
-        public List<OrderProductResponseModel> Products { get; set; }
+        public IEnumerable<OrderProductResponseModel> Products
+        {
+            get => mProducts ?? Enumerable.Empty<OrderProductResponseModel>();
+
+            set => mProducts = value;
+        }
 
         #endregion
 

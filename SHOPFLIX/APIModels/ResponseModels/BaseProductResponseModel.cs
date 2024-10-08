@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,15 @@ namespace SHOPFLIX
     /// </summary>
     public class BaseProductResponseModel
     {
+        #region Private Members
+
+        /// <summary>
+        /// The member of the <see cref="VendorSku"/> property
+        /// </summary>
+        private string? mVendorSku;
+
+        #endregion
+
         #region Public Properties
 
         /// <summary>
@@ -29,8 +39,14 @@ namespace SHOPFLIX
         /// <summary>
         /// The vendor sku
         /// </summary>
+        [AllowNull]
         [JsonProperty("vendor_sku")]
-        public string VendorSku { get; set; }
+        public string VendorSku
+        {
+            get => mVendorSku ?? String.Empty;
+
+            set => mVendorSku = value;
+        }
 
         /// <summary>
         /// The price

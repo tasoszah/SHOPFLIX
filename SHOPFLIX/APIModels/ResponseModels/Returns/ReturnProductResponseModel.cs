@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,15 @@ namespace SHOPFLIX
     /// </summary>
     public class ReturnProductResponseModel : BaseProductResponseModel
     {
+        #region Private Members
+
+        /// <summary>
+        /// The member of the <see cref="ReasonText"/> property
+        /// </summary>
+        private string? mReasonText;
+
+        #endregion
+
         #region Public Properties
 
         /// <summary>
@@ -23,8 +33,14 @@ namespace SHOPFLIX
         /// <summary>
         /// The text for the reason of return
         /// </summary>
+        [AllowNull]
         [JsonProperty("reason_text")]
-        public string ReasonText { get; set; }
+        public string ReasonText
+        {
+            get => mReasonText ?? String.Empty;
+
+            set => mReasonText = value;
+        }
 
         #endregion
 

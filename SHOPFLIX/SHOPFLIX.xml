@@ -85,12 +85,182 @@
             The default constructor
             </summary>
         </member>
+        <member name="T:SHOPFLIX.CancelVoucherResponseModel">
+            <summary>
+            Represents the cancellation of a voucher
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.CancelVoucherResponseModel.DoesShipmentAlreadyExist">
+            <summary>
+            A flag that indicates if the shipment already exists
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.CancelVoucherResponseModel.Result">
+            <summary>
+            The result
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.CancelVoucherResponseModel.Errors">
+            <summary>
+            A list of errors represented as an <see cref="T:SHOPFLIX.ErrorResponseModel"/>
+            </summary>
+        </member>
+        <member name="M:SHOPFLIX.CancelVoucherResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
         <member name="T:SHOPFLIX.CreateVoucherResponseModel">
             <summary>
-            R
+            Represents the creation of a voucher via the SHOPFLIX Marketplace
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.CreateVoucherResponseModel.mShipmentNumber">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.CreateVoucherResponseModel.ShipmentNumber"/> property
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.CreateVoucherResponseModel.ShipmentNumber">
+            <summary>
+            The shipment number
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.CreateVoucherResponseModel.TrackingNumber">
+            <summary>
+            The tracking numbers
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.CreateVoucherResponseModel.ShipmentMasterId">
+            <summary>
+            The shipment master id
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.CreateVoucherResponseModel.DoesShipmentAlreadyExists">
+            <summary>
+            A flag that indicates if the shipment already exists
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.CreateVoucherResponseModel.Result">
+            <summary>
+            The result
             </summary>
         </member>
         <member name="M:SHOPFLIX.CreateVoucherResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:SHOPFLIX.ErrorResponseModel">
+            <summary>
+            The error list used at <see cref="T:SHOPFLIX.PrintVoucherErrorResponseModel"/> and <see cref="T:SHOPFLIX.CancelVoucherResponseModel"/>
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.ErrorResponseModel.Code">
+            <summary>
+            The error code
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.ErrorResponseModel.Severity">
+            <summary>
+            The severity
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.ErrorResponseModel.Message">
+            <summary>
+            The error message
+            </summary>
+        </member>
+        <member name="M:SHOPFLIX.ErrorResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:SHOPFLIX.PrintVoucherErrorResponseModel">
+            <summary>
+            Represent a failed print of a voucher
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.PrintVoucherErrorResponseModel.Result">
+            <summary>
+            The result
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.PrintVoucherErrorResponseModel.Errors">
+            <summary>
+            A list of errors represented as an <see cref="T:SHOPFLIX.ErrorResponseModel"/> 
+            </summary>
+        </member>
+        <member name="M:SHOPFLIX.PrintVoucherErrorResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:SHOPFLIX.PrintVoucherSuccesResponseModel">
+            <summary>
+            Represents a successful printing of a voucher
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.PrintVoucherSuccesResponseModel.VoucherFormat">
+            <summary>
+            The voucher format
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.PrintVoucherSuccesResponseModel.VoucherDataList">
+            <summary>
+            A list of data of the voucher
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.PrintVoucherSuccesResponseModel.VoucherDataReturnList">
+            <summary>
+            A list of data of the returned voucher
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.PrintVoucherSuccesResponseModel.Result">
+            <summary>
+            The result
+            </summary>
+        </member>
+        <member name="M:SHOPFLIX.PrintVoucherSuccesResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:SHOPFLIX.ShipingRouteResponseModel">
+            <summary>
+            Representing the shipping route
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.ShipingRouteResponseModel.TrackingList">
+            <summary>
+            An array of tracking comments about the shipment as implemented at <see cref="T:SHOPFLIX.TrackingListResponseModel"/>
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.ShipingRouteResponseModel.Result">
+            <summary>
+            The result 
+            </summary>
+        </member>
+        <member name="M:SHOPFLIX.ShipingRouteResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:SHOPFLIX.TrackingListResponseModel">
+            <summary>
+            Representing the tracking list used at <see cref="T:SHOPFLIX.ShipingRouteResponseModel"/>
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.TrackingListResponseModel.EntityId">
+            <summary>
+            The entity ID
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.TrackingListResponseModel.StationName">
+            <summary>
+            The station name
+            </summary>
+        </member>
+        <member name="M:SHOPFLIX.TrackingListResponseModel.#ctor">
             <summary>
             Default constructor
             </summary>
@@ -380,6 +550,11 @@
             Represents an order
             </summary>
         </member>
+        <member name="F:SHOPFLIX.OrderResponseModel.mIssuerId">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.OrderResponseModel.IssuerId"/> property
+            </summary>
+        </member>
         <member name="P:SHOPFLIX.OrderResponseModel.OrderId">
             <summary>
             The order id
@@ -566,6 +741,11 @@
         <member name="T:SHOPFLIX.ReturnResponseModel">
             <summary>
             Represents a single return 
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.ReturnResponseModel.mProducts">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.ReturnResponseModel.Products"/> property
             </summary>
         </member>
         <member name="P:SHOPFLIX.ReturnResponseModel.OrderId">

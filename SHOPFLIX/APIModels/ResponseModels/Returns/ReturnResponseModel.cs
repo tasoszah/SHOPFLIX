@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,15 @@ namespace SHOPFLIX
     /// </summary>
     public class ReturnResponseModel
     {
+        #region Private Members
+
+        /// <summary>
+        /// The member of the <see cref="Products"/> property
+        /// </summary>
+        private IEnumerable<ReturnProductResponseModel>? mProducts;
+
+        #endregion
+
         #region Public Properties
 
         /// <summary>
@@ -67,8 +77,14 @@ namespace SHOPFLIX
         /// <summary>
         /// A list of the products that are be returned
         /// </summary>
+        [AllowNull]
         [JsonProperty("products")]
-        public List<ReturnProductResponseModel> Products { get; set; }
+        public IEnumerable<ReturnProductResponseModel> Products
+        {
+            get => mProducts ?? Enumerable.Empty<ReturnProductResponseModel>();
+
+            set => mProducts = value;
+        }
 
         #endregion
 
