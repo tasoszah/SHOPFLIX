@@ -1,15 +1,12 @@
 ﻿using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SHOPFLIX
 {
     /// <summary>
-    /// Represents a collection of <see cref="OrderResponseModel"/>s
+    /// Represents a collection of <see cref="MinimalOrderResponseModel"/>s
     /// </summary>
     public class OrdersResponseModel
     {
@@ -18,7 +15,7 @@ namespace SHOPFLIX
         /// <summary>
         /// The member of the <see cref="Orders"/>
         /// </summary>
-        private IEnumerable<OrderResponseModel>? mOrders;
+        private IEnumerable<MinimalOrderResponseModel>? mOrders;
 
         #endregion
 
@@ -29,9 +26,9 @@ namespace SHOPFLIX
         /// </summary>
         [AllowNull]
         [JsonProperty("orders")]
-        public IEnumerable<OrderResponseModel> Orders
+        public IEnumerable<MinimalOrderResponseModel> Orders
         {
-            get => mOrders ?? Enumerable.Empty<OrderResponseModel>();
+            get => mOrders ?? Enumerable.Empty<MinimalOrderResponseModel>();
 
             set => mOrders = value;
         }

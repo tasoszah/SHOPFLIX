@@ -1,16 +1,11 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SHOPFLIX
 {
     /// <summary>
     /// A <see cref="JsonConverter{T}"/> that converts a <see cref="bool"/> to an accept ("V") or a decline ("W") <see cref="string"/>
     /// </summary>
-    public class BoolToEditReturnOrderToStringJsonConverter : JsonConverter<bool>
+    public class BoolToEditReturnOrderToStringJsonConverter : BaseBoolToStringJsonConverter
     {
         #region Constructors
 
@@ -24,21 +19,14 @@ namespace SHOPFLIX
 
         #endregion
 
-        #region Public Methods
+        #region Protected Methods
+
+        /// <inheritdoc/>   
+        protected override string GetFalseString() => "W";
 
         /// <inheritdoc/>
-        public override bool ReadJson(JsonReader reader, Type objectType, bool existingValue, bool hasExistingValue, JsonSerializer serializer)
-        {
-            return serializer.Deserialize<string>(reader) == "V" ? true : false;
-        }
-
-        /// <inhertdoc/>
-        public override void WriteJson(JsonWriter writer, bool value, JsonSerializer serializer)
-        {
-            writer.WriteValue(value ? "V" : "W");
-        }
+        protected override string GetTrueString() => "V";
 
         #endregion
-
     }
 }

@@ -1,37 +1,51 @@
 using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SHOPFLIX
 {
     /// <summary>
-    /// Represents collection of <see cref="ReturnResponseModel"/>s
+    /// Represents collection of <see cref="MinimalReturnResponseModel"/>s
     /// </summary>
     public class ReturnsResponseModel
     {
         #region Private Members
 
         /// <summary>
+        /// The member of the <see cref="Parameters"/> property
+        /// </summary>
+        private ParametersResponseModel? mParameters;
+
+        /// <summary>
         /// The member of the <see cref="Orders"/> property
         /// </summary>
-        private IEnumerable<ReturnResponseModel>? mOrders;
+        private IEnumerable<MinimalReturnResponseModel>? mOrders;
 
         #endregion
 
         #region Public Properties
 
         /// <summary>
+        /// The parameters
+        /// </summary>
+        [AllowNull]
+        [JsonProperty("params")]
+        public ParametersResponseModel Parameters
+        {
+            get => mParameters ??= new ParametersResponseModel();
+
+            set => mParameters = value;
+        }
+
+        /// <summary>
         /// A list of the returned orders
         /// </summary>
         [AllowNull]
         [JsonProperty("orders")]
-        public IEnumerable<ReturnResponseModel> Orders
+        public IEnumerable<MinimalReturnResponseModel> Orders
         {
-            get => mOrders ?? Enumerable.Empty<ReturnResponseModel>();
+            get => mOrders ?? Enumerable.Empty<MinimalReturnResponseModel>();
 
             set => mOrders = value;
         }

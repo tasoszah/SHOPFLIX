@@ -1,10 +1,5 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SHOPFLIX
 {
@@ -38,10 +33,10 @@ namespace SHOPFLIX
         /// The error code
         /// </summary>
         [AllowNull]
-        [JsonProperty("Code")] 
+        [JsonProperty("Code")]
         public string Code
         {
-            get => mCode ?? String.Empty;
+            get => mCode ?? string.Empty;
 
             set => mCode = value;
         }
@@ -53,7 +48,7 @@ namespace SHOPFLIX
         [JsonProperty("Severity")]
         public string Severity
         {
-            get => mSeverity ?? String.Empty;
+            get => mSeverity ?? string.Empty;
 
             set => mSeverity = value;
         }
@@ -65,7 +60,7 @@ namespace SHOPFLIX
         [JsonProperty("Message")]
         public string Message
         {
-            get => mMessage ?? String.Empty;
+            get => mMessage ?? string.Empty;
 
             set => mMessage = value;
         }

@@ -1,10 +1,7 @@
 ﻿using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SHOPFLIX
 {
@@ -15,11 +12,31 @@ namespace SHOPFLIX
     {
         #region Private Members
 
+        /// <summary>
+        /// The member of the <see cref="Parameters"/> property
+        /// </summary>
+        private ParametersResponseModel? mParameters;
+
+        /// <summary>
+        /// The member of the <see cref="Shipments"/> property
+        /// </summary>
         private IEnumerable<ShipmentResponseModel>? mShipments;
 
         #endregion
 
         #region Public Properties
+
+        /// <summary>
+        /// The parameters
+        /// </summary>
+        [AllowNull]
+        [JsonProperty("params")]
+        public ParametersResponseModel Parameters
+        {
+            get => mParameters ??= new ParametersResponseModel();
+
+            set => mParameters = value;
+        }
 
         /// <summary>
         /// The list of shipments

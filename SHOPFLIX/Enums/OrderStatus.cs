@@ -1,5 +1,5 @@
 ﻿namespace SHOPFLIX
-{ 
+{
     /// <summary>
     /// Provides enumeration over the order statuses
     /// </summary>

@@ -1,17 +1,14 @@
 ﻿using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SHOPFLIX
 {
     /// <summary>
     /// Representing the shipping route
     /// </summary>
-    public class ShipingRouteResponseModel
+    public class ShipmentRouteResponseModel
     {
         #region Private Members
 
@@ -46,12 +43,13 @@ namespace SHOPFLIX
         /// </summary>
         [AllowNull]
         [JsonProperty("Result")]
-        public string Result
+        internal string Result
         {
-            get => mResult ?? String.Empty;
+            get => mResult ?? string.Empty;
 
             set => mResult = value;
         }
+
         #endregion
 
         #region Constructors
@@ -59,7 +57,7 @@ namespace SHOPFLIX
         /// <summary>
         /// Default constructor
         /// </summary>
-        public ShipingRouteResponseModel() : base()
+        public ShipmentRouteResponseModel() : base()
         {
 
         }

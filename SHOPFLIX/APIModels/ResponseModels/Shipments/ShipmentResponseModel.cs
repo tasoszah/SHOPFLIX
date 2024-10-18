@@ -3,8 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SHOPFLIX
 {
@@ -14,6 +12,16 @@ namespace SHOPFLIX
     public class ShipmentResponseModel
     {
         #region Private Members
+
+        /// <summary>
+        /// The member of the <see cref="ProductsInfo"/> property
+        /// </summary>
+        private IEnumerable<ShipmentsProductsInfoResponseModel>? mProductsInfo;
+
+        /// <summary>
+        /// The member of the <see cref="OrderReference"/> property
+        /// </summary>
+        private string? mOrderReference;
 
         /// <summary>
         /// The member of the <see cref="Comments"/> property
@@ -75,17 +83,63 @@ namespace SHOPFLIX
         #region Public Properties
 
         /// <summary>
+        /// The products of the order
+        /// </summary>
+        [AllowNull]
+        [JsonIgnore]
+        public IEnumerable<ShipmentProductResponseModel> Products
+        {
+            get
+            {
+                if (ProductsInternal.IsNullOrEmpty())
+                    return Enumerable.Empty<ShipmentProductResponseModel>();
+
+                foreach (var pair in ProductsInternal)
+                    pair.Value.Id = int.Parse(pair.Key);
+
+                return ProductsInternal.Values;
+            }
+
+            set
+            {
+                if (value is null)
+                {
+                    ProductsInternal = null;
+
+                    return;
+                }
+
+                var result = new Dictionary<string, ShipmentProductResponseModel>();
+                foreach (var product in value)
+                    result.Add(product.Id.ToString(), product);
+                ProductsInternal = result;
+            }
+        }
+
+        /// <summary>
+        /// The order reference
+        /// </summary>
+        [AllowNull]
+        [JsonProperty("order_reference")]
+        private string OrderReference
+        {
+            get => mOrderReference ?? string.Empty;
+
+            set => mOrderReference = value;
+        }
+
+        /// <summary>
         /// The shipment id
         /// </summary>
         [JsonProperty("shipment_id")]
         public int ShipmentId { get; set; }
 
-        /// <summary>
-        /// The shipment timestamp
-        /// </summary>
-        [JsonProperty("shipment_timestamp")]
-        [JsonConverter(typeof(DateTimeOffsetToUnixTimeIntegerJsonConverter))]
-        public DateTimeOffset ShipmentTimestamp { get; set; }
+        ///// <summary>
+        ///// The shipment timestamp
+        ///// </summary>
+        //[JsonProperty("shipment_timestamp")]
+        //[JsonConverter(typeof(DateTimeOffsetToUnixTimeIntegerJsonConverter))]
+        //public DateTimeOffset ShipmentTimestamp { get; set; }
 
         /// <summary>
         ///The comments
@@ -94,7 +148,7 @@ namespace SHOPFLIX
         [JsonProperty("comments")]
         public string Comments
         {
-            get => mComments ?? String.Empty;
+            get => mComments ?? string.Empty;
 
             set => mComments = value;
         }
@@ -126,7 +180,7 @@ namespace SHOPFLIX
         [JsonProperty("s_firstname")]
         public string SFirstName
         {
-            get => mSFirstName ?? String.Empty;
+            get => mSFirstName ?? string.Empty;
 
             set => mSFirstName = value;
         }
@@ -138,7 +192,7 @@ namespace SHOPFLIX
         [JsonProperty("s_lastname")]
         public string SLastName
         {
-            get => mSLastName ?? String.Empty;
+            get => mSLastName ?? string.Empty;
 
             set => mSLastName = value;
         }
@@ -150,7 +204,7 @@ namespace SHOPFLIX
         [JsonProperty("firstname")]
         public string FirstName
         {
-            get => mFirstName ?? String.Empty;
+            get => mFirstName ?? string.Empty;
 
             set => mFirstName = value;
         }
@@ -162,7 +216,7 @@ namespace SHOPFLIX
         [JsonProperty("lastname")]
         public string LastName
         {
-            get => mLastName ?? String.Empty;
+            get => mLastName ?? string.Empty;
 
             set => mLastName = value;
         }
@@ -174,7 +228,7 @@ namespace SHOPFLIX
         [JsonProperty("company")]
         public string Company
         {
-            get => mCompany ?? String.Empty;
+            get => mCompany ?? string.Empty;
 
             set => mCompany = value;
         }
@@ -198,7 +252,7 @@ namespace SHOPFLIX
         [JsonProperty("shipping")]
         public string Shipping
         {
-            get => mShipping ?? String.Empty;
+            get => mShipping ?? string.Empty;
 
             set => mShipping = value;
         }
@@ -210,7 +264,7 @@ namespace SHOPFLIX
         [JsonProperty("tracking_number")]
         public string TrackingNumber
         {
-            get => mTrackingNumber ?? String.Empty;
+            get => mTrackingNumber ?? string.Empty;
 
             set => mTrackingNumber = value;
         }
@@ -222,9 +276,9 @@ namespace SHOPFLIX
         [JsonProperty("carrier")]
         public string Carrier
         {
-            get => mCarrier ?? String.Empty;
+            get => mCarrier ?? string.Empty;
 
-            set => mCarrier= value;
+            set => mCarrier = value;
         }
 
         /// <summary>
@@ -234,7 +288,7 @@ namespace SHOPFLIX
         [JsonProperty("funship_charge_type")]
         public string FunshipChargeType
         {
-            get => mFunshipChargeType ?? String.Empty;
+            get => mFunshipChargeType ?? string.Empty;
 
             set => mFunshipChargeType = value;
         }
@@ -246,7 +300,7 @@ namespace SHOPFLIX
         [JsonProperty("funship_shipment_status")]
         public string FunshipShipmentStatus
         {
-            get => mFunshipShipmentStatus ?? String.Empty;
+            get => mFunshipShipmentStatus ?? string.Empty;
 
             set => mFunshipShipmentStatus = value;
         }
@@ -264,12 +318,6 @@ namespace SHOPFLIX
         public decimal CodCost { get; set; }
 
         /// <summary>
-        /// The products of the shipment
-        /// </summary>
-        [JsonProperty("products")]
-        public object? Products { get; set; }
-
-        /// <summary>
         /// The group key
         /// </summary>
         [JsonProperty("group_key")]
@@ -278,20 +326,33 @@ namespace SHOPFLIX
         /// <summary>
         /// The information about the products
         /// </summary>
+        [AllowNull]
         [JsonProperty("products_info")]
-        public object? ProductsInfo { get; set; }
+        public IEnumerable<ShipmentsProductsInfoResponseModel> ProductsInfo
+        {
+            get => mProductsInfo ?? Enumerable.Empty<ShipmentsProductsInfoResponseModel>();
+
+            set => mProductsInfo = value;
+        }
 
         /// <summary>
         /// The carrier info
         /// </summary>
         [JsonProperty("carrier_info")]
-        public CarrierInfoResponseModel CarrierInfo { get; set; }
+        public CarrierInfoResponseModel? CarrierInfo { get; set; }
 
         /// <summary>
         /// A flag that indicates if its full or not
         /// </summary>
         [JsonProperty("one_full")]
         public bool IsOneFull { get; set; }
+
+        #endregion
+
+        #region Internal Properties
+
+        [JsonProperty("products")]
+        public Dictionary<string, ShipmentProductResponseModel>? ProductsInternal { get; set; }
 
         #endregion
 

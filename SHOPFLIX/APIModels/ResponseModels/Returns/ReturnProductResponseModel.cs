@@ -1,15 +1,10 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SHOPFLIX
-{ 
+{
     /// <summary>
-    /// Represents a product in a <see cref="ReturnResponseModel"/>
+    /// Represents a product in a <see cref="MinimalReturnResponseModel"/>
     /// </summary>
     public class ReturnProductResponseModel : BaseProductResponseModel
     {
@@ -37,7 +32,7 @@ namespace SHOPFLIX
         [JsonProperty("reason_text")]
         public string ReasonText
         {
-            get => mReasonText ?? String.Empty;
+            get => mReasonText ?? string.Empty;
 
             set => mReasonText = value;
         }

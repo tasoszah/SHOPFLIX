@@ -8,10 +8,10 @@
         /// <summary>
         /// PDF format
         /// </summary>
-        Pdf,
+        PDF,
 
         /// <summary>
-        /// Simple file
+        /// A PDF without graphics (Colors / Images)
         /// </summary>
         Clean
     }

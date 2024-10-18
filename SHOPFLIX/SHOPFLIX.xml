@@ -4,6 +4,56 @@
         <name>SHOPFLIX</name>
     </assembly>
     <members>
+        <member name="T:SHOPFLIX.APIArgs.BaseDateBasedAPIArgs">
+            <summary>
+            The base for 
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.APIArgs.BaseDateBasedAPIArgs.DateFrom">
+            <summary>
+            Limit the result set to entries created after a specific date
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.APIArgs.BaseDateBasedAPIArgs.DateTo">
+            <summary>
+            Limit the result set to entries created before a specific date
+            </summary>
+        </member>
+        <member name="M:SHOPFLIX.APIArgs.BaseDateBasedAPIArgs.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:SHOPFLIX.OrderAPIArgs">
+            <summary>
+            Arguments used for retrieving orders
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.OrderAPIArgs.Status">
+            <summary>
+            Limit the result set to entries with specific status
+            </summary>
+        </member>
+        <member name="M:SHOPFLIX.OrderAPIArgs.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:SHOPFLIX.ReturnAPIArgs">
+            <summary>
+            Arguments used for retrieving returns
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.ReturnAPIArgs.Status">
+            <summary>
+            Limit the result set to entries with specific status
+            </summary>
+        </member>
+        <member name="M:SHOPFLIX.ReturnAPIArgs.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
         <member name="T:SHOPFLIX.AcceptOrDeclineOrderRequestModel">
             <summary>
             Request model used for accepting or rejecting an order
@@ -52,7 +102,92 @@
         </member>
         <member name="T:SHOPFLIX.BaseProductResponseModel">
             <summary>
-            Represents base info of a product in the <see cref="T:SHOPFLIX.OrderResponseModel"/>  and the <see cref="T:SHOPFLIX.ReturnResponseModel"/>
+            Represents base info of a product in the <see cref="T:SHOPFLIX.MinimalOrderResponseModel"/>  and the <see cref="T:SHOPFLIX.MinimalReturnResponseModel"/>
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.BaseProductResponseModel.mItemId">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.BaseProductResponseModel.ItemId"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.BaseProductResponseModel.mProductStatus">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.BaseProductResponseModel.ProductStatus"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.BaseProductResponseModel.mProductId">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.BaseProductResponseModel.ProductId"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.BaseProductResponseModel.mProductCode">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.BaseProductResponseModel.ProductCode"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.BaseProductResponseModel.mProduct">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.BaseProductResponseModel.Product"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.BaseProductResponseModel.mMasterProductCode">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.BaseProductResponseModel.MasterProductCode"/>
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.BaseProductResponseModel.mCompanyId">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.BaseProductResponseModel.CompanyId"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.BaseProductResponseModel.mEAN">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.BaseProductResponseModel.EAN"/> property
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.BaseProductResponseModel.Id">
+            <summary>
+            The product id
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.BaseProductResponseModel.ProductStatus">
+            <summary>
+            The product status
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.BaseProductResponseModel.ProductCode">
+            <summary>
+            The product code
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.BaseProductResponseModel.Product">
+            <summary>
+            The product name
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.BaseProductResponseModel.Price">
+            <summary>
+            The price
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.BaseProductResponseModel.OriginalPrice">
+            <summary>
+            The original price
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.BaseProductResponseModel.OrderId">
+            <summary>
+            The order id
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.BaseProductResponseModel.MasterProductCode">
+            <summary>
+            The master product code
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.BaseProductResponseModel.CompanyId">
+            <summary>
+            The company id
             </summary>
         </member>
         <member name="P:SHOPFLIX.BaseProductResponseModel.ItemId">
@@ -65,19 +200,19 @@
             The product id
             </summary>
         </member>
-        <member name="P:SHOPFLIX.BaseProductResponseModel.VendorSku">
+        <member name="P:SHOPFLIX.BaseProductResponseModel.EAN">
             <summary>
-            The vendor sku
+            The EAN
             </summary>
         </member>
-        <member name="P:SHOPFLIX.BaseProductResponseModel.Price">
+        <member name="P:SHOPFLIX.BaseProductResponseModel.BasePrice">
             <summary>
             The price
             </summary>
         </member>
         <member name="P:SHOPFLIX.BaseProductResponseModel.Amount">
             <summary>
-            The amount
+            The quantity of the product
             </summary>
         </member>
         <member name="M:SHOPFLIX.BaseProductResponseModel.#ctor">
@@ -88,6 +223,16 @@
         <member name="T:SHOPFLIX.CancelVoucherResponseModel">
             <summary>
             Represents the cancellation of a voucher
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.CancelVoucherResponseModel.mResult">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.CancelVoucherResponseModel.Result"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.CancelVoucherResponseModel.mErrors">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.CancelVoucherResponseModel.Errors"/>
             </summary>
         </member>
         <member name="P:SHOPFLIX.CancelVoucherResponseModel.DoesShipmentAlreadyExist">
@@ -120,12 +265,27 @@
             The member of the <see cref="P:SHOPFLIX.CreateVoucherResponseModel.ShipmentNumber"/> property
             </summary>
         </member>
+        <member name="F:SHOPFLIX.CreateVoucherResponseModel.mTrackingNumbers">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.CreateVoucherResponseModel.TrackingNumbers"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.CreateVoucherResponseModel.mShipmentMasterId">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.CreateVoucherResponseModel.ShipmentMasterId"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.CreateVoucherResponseModel.mResult">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.CreateVoucherResponseModel.Result"/> property
+            </summary>
+        </member>
         <member name="P:SHOPFLIX.CreateVoucherResponseModel.ShipmentNumber">
             <summary>
             The shipment number
             </summary>
         </member>
-        <member name="P:SHOPFLIX.CreateVoucherResponseModel.TrackingNumber">
+        <member name="P:SHOPFLIX.CreateVoucherResponseModel.TrackingNumbers">
             <summary>
             The tracking numbers
             </summary>
@@ -155,6 +315,21 @@
             The error list used at <see cref="T:SHOPFLIX.PrintVoucherErrorResponseModel"/> and <see cref="T:SHOPFLIX.CancelVoucherResponseModel"/>
             </summary>
         </member>
+        <member name="F:SHOPFLIX.ErrorResponseModel.mCode">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.ErrorResponseModel.Code"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.ErrorResponseModel.mSeverity">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.ErrorResponseModel.Severity"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.ErrorResponseModel.mMessage">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.ErrorResponseModel.Message"/> property
+            </summary>
+        </member>
         <member name="P:SHOPFLIX.ErrorResponseModel.Code">
             <summary>
             The error code
@@ -175,9 +350,44 @@
             Default constructor
             </summary>
         </member>
+        <member name="F:SHOPFLIX.InternalCreateVoucherResponseModel.mVoucher">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.InternalCreateVoucherResponseModel.Voucher"/> property
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.InternalCreateVoucherResponseModel.Voucher">
+            <summary>
+            The voucher
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.InternalCreateVoucherResponseModel.Message">
+            <summary>
+            The error message
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.InternalCreateVoucherResponseModel.Error">
+            <summary>
+            The error message
+            </summary>
+        </member>
+        <member name="M:SHOPFLIX.InternalCreateVoucherResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
         <member name="T:SHOPFLIX.PrintVoucherErrorResponseModel">
             <summary>
             Represent a failed print of a voucher
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.PrintVoucherErrorResponseModel.mResult">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.PrintVoucherErrorResponseModel.Result"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.PrintVoucherErrorResponseModel.mErrors">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.PrintVoucherErrorResponseModel.Errors"/> property
             </summary>
         </member>
         <member name="P:SHOPFLIX.PrintVoucherErrorResponseModel.Result">
@@ -200,6 +410,26 @@
             Represents a successful printing of a voucher
             </summary>
         </member>
+        <member name="F:SHOPFLIX.PrintVoucherSuccesResponseModel.mVoucherDataList">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.PrintVoucherSuccesResponseModel.VoucherDataList"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.PrintVoucherSuccesResponseModel.mVoucherDataReturnList">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.PrintVoucherSuccesResponseModel.VoucherDataReturnList"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.PrintVoucherSuccesResponseModel.mResult">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.PrintVoucherSuccesResponseModel.Result"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.PrintVoucherSuccesResponseModel.mVoucher">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.PrintVoucherSuccesResponseModel.Voucher"/> property
+            </summary>
+        </member>
         <member name="P:SHOPFLIX.PrintVoucherSuccesResponseModel.VoucherFormat">
             <summary>
             The voucher format
@@ -215,6 +445,11 @@
             A list of data of the returned voucher
             </summary>
         </member>
+        <member name="P:SHOPFLIX.PrintVoucherSuccesResponseModel.Voucher">
+            <summary>
+            The voucher in Base64 format
+            </summary>
+        </member>
         <member name="P:SHOPFLIX.PrintVoucherSuccesResponseModel.Result">
             <summary>
             The result
@@ -225,29 +460,49 @@
             Default constructor
             </summary>
         </member>
-        <member name="T:SHOPFLIX.ShipingRouteResponseModel">
+        <member name="T:SHOPFLIX.ShipmentRouteResponseModel">
             <summary>
             Representing the shipping route
             </summary>
         </member>
-        <member name="P:SHOPFLIX.ShipingRouteResponseModel.TrackingList">
+        <member name="F:SHOPFLIX.ShipmentRouteResponseModel.mTrackingList">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.ShipmentRouteResponseModel.TrackingList"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.ShipmentRouteResponseModel.mResult">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.ShipmentRouteResponseModel.Result"/> property
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.ShipmentRouteResponseModel.TrackingList">
             <summary>
             An array of tracking comments about the shipment as implemented at <see cref="T:SHOPFLIX.TrackingListResponseModel"/>
             </summary>
         </member>
-        <member name="P:SHOPFLIX.ShipingRouteResponseModel.Result">
+        <member name="P:SHOPFLIX.ShipmentRouteResponseModel.Result">
             <summary>
             The result 
             </summary>
         </member>
-        <member name="M:SHOPFLIX.ShipingRouteResponseModel.#ctor">
+        <member name="M:SHOPFLIX.ShipmentRouteResponseModel.#ctor">
             <summary>
             Default constructor
             </summary>
         </member>
         <member name="T:SHOPFLIX.TrackingListResponseModel">
             <summary>
-            Representing the tracking list used at <see cref="T:SHOPFLIX.ShipingRouteResponseModel"/>
+            Representing the tracking list used at <see cref="T:SHOPFLIX.ShipmentRouteResponseModel"/>
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.TrackingListResponseModel.mEntityId">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.TrackingListResponseModel.EntityId"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.TrackingListResponseModel.mStationName">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.TrackingListResponseModel.StationName"/> property
             </summary>
         </member>
         <member name="P:SHOPFLIX.TrackingListResponseModel.EntityId">
@@ -265,257 +520,142 @@
             Default constructor
             </summary>
         </member>
-        <member name="T:SHOPFLIX.CompleteOrderResponseModel">
+        <member name="T:SHOPFLIX.MessageResponseModel">
             <summary>
-            Represents the full information of a single order 
+            Contains information related to a message
             </summary>
         </member>
-        <member name="P:SHOPFLIX.CompleteOrderResponseModel.IPAddress">
+        <member name="F:SHOPFLIX.MessageResponseModel.mMessage">
             <summary>
-            The customer's IP address 
+            The member of the <see cref="P:SHOPFLIX.MessageResponseModel.Message"/> property
             </summary>
         </member>
-        <member name="P:SHOPFLIX.CompleteOrderResponseModel.LangCode">
+        <member name="P:SHOPFLIX.MessageResponseModel.Message">
             <summary>
-            The code of the language which the customer selected when placing the order, for example el 
+            The message
             </summary>
         </member>
-        <member name="P:SHOPFLIX.CompleteOrderResponseModel.LocalizationId">
+        <member name="M:SHOPFLIX.MessageResponseModel.#ctor">
             <summary>
-            ID of the localization. Note: Localizations are deprecated and disabled by default.
+            Default constructor
             </summary>
         </member>
-        <member name="P:SHOPFLIX.CompleteOrderResponseModel.Discount">
+        <member name="T:SHOPFLIX.MinimalOrderResponseModel">
             <summary>
-            The total discount
+            Represents the basic information of an order
             </summary>
         </member>
-        <member name="P:SHOPFLIX.CompleteOrderResponseModel.Subtotal">
+        <member name="F:SHOPFLIX.MinimalOrderResponseModel.mCompanyId">
             <summary>
-            The order subtotal
+            The member of the <see cref="P:SHOPFLIX.MinimalOrderResponseModel.CompanyId"/> property
             </summary>
         </member>
-        <member name="P:SHOPFLIX.CompleteOrderResponseModel.SubtotalDiscount">
+        <member name="F:SHOPFLIX.MinimalOrderResponseModel.mCompany">
             <summary>
-            The discount on the order subtotal
+            The member of the <see cref="P:SHOPFLIX.MinimalOrderResponseModel.Company"/> property
             </summary>
         </member>
-        <member name="P:SHOPFLIX.CompleteOrderResponseModel.DisplaySubtotal">
+        <member name="F:SHOPFLIX.MinimalOrderResponseModel.mIssuerId">
             <summary>
-            The subtotal that will be displayed
+            The member of the <see cref="P:SHOPFLIX.MinimalOrderResponseModel.IssuerId"/> property
             </summary>
         </member>
-        <member name="P:SHOPFLIX.CompleteOrderResponseModel.PaymentId">
+        <member name="F:SHOPFLIX.MinimalOrderResponseModel.mFirstName">
             <summary>
-            The id of the payment method
+            The member of the <see cref="P:SHOPFLIX.MinimalOrderResponseModel.FirstName"/> property
             </summary>
         </member>
-        <member name="P:SHOPFLIX.CompleteOrderResponseModel.PaymentInfo">
+        <member name="F:SHOPFLIX.MinimalOrderResponseModel.mLastName">
             <summary>
-            Payment information
+            The member of the <see cref="P:SHOPFLIX.MinimalOrderResponseModel.LastName"/> property
             </summary>
         </member>
-        <member name="P:SHOPFLIX.CompleteOrderResponseModel.PaymentMethod">
+        <member name="P:SHOPFLIX.MinimalOrderResponseModel.OrderId">
             <summary>
-            The settings of the payment method
+            The order id
             </summary>
         </member>
-        <member name="P:SHOPFLIX.CompleteOrderResponseModel.PaymentSurcharge">
+        <member name="P:SHOPFLIX.MinimalOrderResponseModel.IssuerId">
             <summary>
-            The amount of payment surcharge
+            The issuer id
             </summary>
         </member>
-        <member name="P:SHOPFLIX.CompleteOrderResponseModel.WasRepaid">
+        <member name="P:SHOPFLIX.MinimalOrderResponseModel.UserId">
             <summary>
-            Indicates if the order was repaid
+            The user id
             </summary>
         </member>
-        <member name="P:SHOPFLIX.CompleteOrderResponseModel.PromotionIds">
+        <member name="P:SHOPFLIX.MinimalOrderResponseModel.IsParentOrder">
             <summary>
-            A string of promotion IDs separated by commas
+            A flag indicating if its a parent order or not
             </summary>
         </member>
-        <member name="P:SHOPFLIX.CompleteOrderResponseModel.Promotions">
+        <member name="P:SHOPFLIX.MinimalOrderResponseModel.ParentOrderId">
             <summary>
-            The data of applicable promotions
+            The parent order id
             </summary>
         </member>
-        <member name="P:SHOPFLIX.CompleteOrderResponseModel.IsShippingRequired">
+        <member name="P:SHOPFLIX.MinimalOrderResponseModel.Company">
             <summary>
-            Defines if the order requires shipping
+            The company
             </summary>
         </member>
-        <member name="P:SHOPFLIX.CompleteOrderResponseModel.ShippingIds">
+        <member name="P:SHOPFLIX.MinimalOrderResponseModel.CompanyId">
             <summary>
-            The IDs of the shipping methods
+            The company id
             </summary>
         </member>
-        <member name="P:SHOPFLIX.CompleteOrderResponseModel.Shipping">
+        <member name="P:SHOPFLIX.MinimalOrderResponseModel.Timestamp">
             <summary>
-            The data of the shipping methods used in the order.
+            The timestamp
             </summary>
         </member>
-        <member name="P:SHOPFLIX.CompleteOrderResponseModel.ShippingId">
+        <member name="P:SHOPFLIX.MinimalOrderResponseModel.FirstName">
             <summary>
-            The ID of the shipping method 
+            The first name
             </summary>
         </member>
-        <member name="P:SHOPFLIX.CompleteOrderResponseModel.IsShipmentRequired">
+        <member name="P:SHOPFLIX.MinimalOrderResponseModel.LastName">
             <summary>
-            Defines if the order requires shipments.
+            The last name
             </summary>
         </member>
-        <member name="P:SHOPFLIX.CompleteOrderResponseModel.ShipmentIds">
+        <member name="P:SHOPFLIX.MinimalOrderResponseModel.Email">
             <summary>
-            A string of shipment IDs separated by commas.
+            The email
             </summary>
         </member>
-        <member name="P:SHOPFLIX.CompleteOrderResponseModel.ShippingCost">
+        <member name="P:SHOPFLIX.MinimalOrderResponseModel.Phone">
             <summary>
-            The shipping cost
+            The phone number
             </summary>
         </member>
-        <member name="P:SHOPFLIX.CompleteOrderResponseModel.DisplayShippingCost">
+        <member name="P:SHOPFLIX.MinimalOrderResponseModel.Status">
             <summary>
-            The shipping cost that will be displayed
+            The order status
             </summary>
         </member>
-        <member name="P:SHOPFLIX.CompleteOrderResponseModel.IsTaxExempt">
+        <member name="P:SHOPFLIX.MinimalOrderResponseModel.Total">
             <summary>
-            Determines if the customer is exempt from taxes
+            The order total
             </summary>
         </member>
-        <member name="P:SHOPFLIX.CompleteOrderResponseModel.TaxSubtotal">
+        <member name="P:SHOPFLIX.MinimalOrderResponseModel.InvoiceId">
             <summary>
-            The subtotal of the tax
+            The invoice id
             </summary>
         </member>
-        <member name="P:SHOPFLIX.CompleteOrderResponseModel.Taxes">
+        <member name="P:SHOPFLIX.MinimalOrderResponseModel.CreditMemoId">
             <summary>
-            The data of the applicable taxes
+            The credit memo id
             </summary>
         </member>
-        <member name="P:SHOPFLIX.CompleteOrderResponseModel.Notes">
+        <member name="P:SHOPFLIX.MinimalOrderResponseModel.Points">
             <summary>
-            Customer’s notes about the order
+            The points
             </summary>
         </member>
-        <member name="P:SHOPFLIX.CompleteOrderResponseModel.Details">
-            <summary>
-            Administrator’s notes about the order
-            </summary>
-        </member>
-        <member name="P:SHOPFLIX.CompleteOrderResponseModel.SAddress">
-            <summary>
-            The shipping address
-            </summary>
-        </member>
-        <member name="P:SHOPFLIX.CompleteOrderResponseModel.SAddress2">
-            <summary>
-            The second shipping address
-            </summary>
-        </member>
-        <member name="P:SHOPFLIX.CompleteOrderResponseModel.SCity">
-            <summary>
-            The shipping city
-            </summary>
-        </member>
-        <member name="P:SHOPFLIX.CompleteOrderResponseModel.SCountry">
-            <summary>
-            The 2-letter shipping country code
-            </summary>
-        </member>
-        <member name="P:SHOPFLIX.CompleteOrderResponseModel.SCountryDescr">
-            <summary>
-            The country name
-            </summary>
-        </member>
-        <member name="P:SHOPFLIX.CompleteOrderResponseModel.SFirstName">
-            <summary>
-            The shipping first name
-            </summary>
-        </member>
-        <member name="P:SHOPFLIX.CompleteOrderResponseModel.SLastName">
-            <summary>
-            The shipping last name
-            </summary>
-        </member>
-        <member name="P:SHOPFLIX.CompleteOrderResponseModel.SPhone">
-            <summary>
-            The shipping phone number
-            </summary>
-        </member>
-        <member name="P:SHOPFLIX.CompleteOrderResponseModel.SState">
-            <summary>
-            The shipping state code
-            </summary>
-        </member>
-        <member name="P:SHOPFLIX.CompleteOrderResponseModel.SStateDescr">
-            <summary>
-            The shipping state name
-            </summary>
-        </member>
-        <member name="P:SHOPFLIX.CompleteOrderResponseModel.SZipCode">
-            <summary>
-            The shipping zip code
-            </summary>
-        </member>
-        <member name="P:SHOPFLIX.CompleteOrderResponseModel.BAddress">
-            <summary>
-            The billing address
-            </summary>
-        </member>
-        <member name="P:SHOPFLIX.CompleteOrderResponseModel.BAddress2">
-            <summary>
-            The second billing address
-            </summary>
-        </member>
-        <member name="P:SHOPFLIX.CompleteOrderResponseModel.BCity">
-            <summary>
-            The billing city
-            </summary>
-        </member>
-        <member name="P:SHOPFLIX.CompleteOrderResponseModel.BCountry">
-            <summary>
-            The 2-letter billing country code 
-            </summary>
-        </member>
-        <member name="P:SHOPFLIX.CompleteOrderResponseModel.BCountryDescr">
-            <summary>
-            The billing country name
-            </summary>
-        </member>
-        <member name="P:SHOPFLIX.CompleteOrderResponseModel.BFirstName">
-            <summary>
-            The billing first name
-            </summary>
-        </member>
-        <member name="P:SHOPFLIX.CompleteOrderResponseModel.BLastName">
-            <summary>
-            The billing last name
-            </summary>
-        </member>
-        <member name="P:SHOPFLIX.CompleteOrderResponseModel.BPhone">
-            <summary>
-            The billing phone
-            </summary>
-        </member>
-        <member name="P:SHOPFLIX.CompleteOrderResponseModel.BState">
-            <summary>
-            The billing state code
-            </summary>
-        </member>
-        <member name="P:SHOPFLIX.CompleteOrderResponseModel.BStateDescr">
-            <summary>
-            The billing state name
-            </summary>
-        </member>
-        <member name="P:SHOPFLIX.CompleteOrderResponseModel.BZipCode">
-            <summary>
-            The billing zip code
-            </summary>
-        </member>
-        <member name="M:SHOPFLIX.CompleteOrderResponseModel.#ctor">
+        <member name="M:SHOPFLIX.MinimalOrderResponseModel.#ctor">
             <summary>
             Default constructor
             </summary>
@@ -530,9 +670,49 @@
             A flag that indicates if there is a gift wrap or not
             </summary>
         </member>
+        <member name="P:SHOPFLIX.OrderProductExtraResponseModel.DeliveryDate">
+            <summary>
+            The delivery date
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.OrderProductExtraResponseModel.PickupDate">
+            <summary>
+            The pickup date
+            </summary>
+        </member>
         <member name="M:SHOPFLIX.OrderProductExtraResponseModel.#ctor">
             <summary>
             Default constructor
+            </summary>
+        </member>
+        <member name="T:SHOPFLIX.OrderProductResponseModel">
+            <summary>
+            Represents a set of extra information related to an order product
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.OrderProductResponseModel.mExtra">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.OrderProductResponseModel.Extra"/> property
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.OrderProductResponseModel.ProductUrl">
+            <summary>
+            The product url 
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.OrderProductResponseModel.IsStatus39A">
+            <summary>
+            The status of 39A
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.OrderProductResponseModel.TotalPrice">
+            <summary>
+            The total price
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.OrderProductResponseModel.ExtendedAttributes">
+            <summary>
+            The extended attributes 
             </summary>
         </member>
         <member name="P:SHOPFLIX.OrderProductResponseModel.Extra">
@@ -547,97 +727,438 @@
         </member>
         <member name="T:SHOPFLIX.OrderResponseModel">
             <summary>
-            Represents an order
+            Represents the full information of an order 
             </summary>
         </member>
-        <member name="F:SHOPFLIX.OrderResponseModel.mIssuerId">
+        <member name="F:SHOPFLIX.OrderResponseModel.mShipping">
             <summary>
-            The member of the <see cref="P:SHOPFLIX.OrderResponseModel.IssuerId"/> property
+            The member of the <see cref="P:SHOPFLIX.OrderResponseModel.Shipping"/> property
             </summary>
         </member>
-        <member name="P:SHOPFLIX.OrderResponseModel.OrderId">
+        <member name="F:SHOPFLIX.OrderResponseModel.mOrderReference">
             <summary>
-            The order id
+            The member of the <see cref="P:SHOPFLIX.OrderResponseModel.OrderReference"/>
             </summary>
         </member>
-        <member name="P:SHOPFLIX.OrderResponseModel.IssuerId">
+        <member name="F:SHOPFLIX.OrderResponseModel.mLastOrderChange">
             <summary>
-            The issuer id
+            THe member of the <see cref="P:SHOPFLIX.OrderResponseModel.LastOrderChange"/>
             </summary>
         </member>
-        <member name="P:SHOPFLIX.OrderResponseModel.UserId">
+        <member name="F:SHOPFLIX.OrderResponseModel.mIPAddress">
             <summary>
-            The user id
+            The member of the <see cref="P:SHOPFLIX.OrderResponseModel.IPAddress"/> property
             </summary>
         </member>
-        <member name="P:SHOPFLIX.OrderResponseModel.IsParentOrder">
+        <member name="F:SHOPFLIX.OrderResponseModel.mLangCode">
             <summary>
-            A flag indicating if its a parent order or not
+            The member of the <see cref="P:SHOPFLIX.OrderResponseModel.LangCode"/> property
             </summary>
         </member>
-        <member name="P:SHOPFLIX.OrderResponseModel.ParentOrderId">
+        <member name="F:SHOPFLIX.OrderResponseModel.mPromotionIds">
             <summary>
-            The parent order id
+            The member of the <see cref="P:SHOPFLIX.OrderResponseModel.PromotionIds"/> property
             </summary>
         </member>
-        <member name="P:SHOPFLIX.OrderResponseModel.CompanyId">
+        <member name="F:SHOPFLIX.OrderResponseModel.mShippingIds">
             <summary>
-            The company id
+            The member of the <see cref="P:SHOPFLIX.OrderResponseModel.ShippingIds"/> property
             </summary>
         </member>
-        <member name="P:SHOPFLIX.OrderResponseModel.Timestamp">
+        <member name="F:SHOPFLIX.OrderResponseModel.mShipmentIds">
             <summary>
-            The timestamp
+            The member of the <see cref="P:SHOPFLIX.OrderResponseModel.ShipmentIds"/> property
             </summary>
         </member>
-        <member name="P:SHOPFLIX.OrderResponseModel.FirstName">
+        <member name="F:SHOPFLIX.OrderResponseModel.mNotes">
             <summary>
-            The first name
+            The member of the <see cref="P:SHOPFLIX.OrderResponseModel.Notes"/> property
             </summary>
         </member>
-        <member name="P:SHOPFLIX.OrderResponseModel.LastName">
+        <member name="F:SHOPFLIX.OrderResponseModel.mDetails">
             <summary>
-            The last name
+            The member of the <see cref="P:SHOPFLIX.OrderResponseModel.Details"/> property
             </summary>
         </member>
-        <member name="P:SHOPFLIX.OrderResponseModel.Email">
+        <member name="F:SHOPFLIX.OrderResponseModel.mSAddress">
             <summary>
-            The email
+            The member of the <see cref="P:SHOPFLIX.OrderResponseModel.SAddress"/> property
             </summary>
         </member>
-        <member name="P:SHOPFLIX.OrderResponseModel.Phone">
+        <member name="F:SHOPFLIX.OrderResponseModel.mSAddress2">
             <summary>
-            The phone number
+            The member of the <see cref="P:SHOPFLIX.OrderResponseModel.SAddress2"/> property
             </summary>
         </member>
-        <member name="P:SHOPFLIX.OrderResponseModel.Status">
+        <member name="F:SHOPFLIX.OrderResponseModel.mSCity">
             <summary>
-            The order status
+            The member of the <see cref="P:SHOPFLIX.OrderResponseModel.SCity"/> property
             </summary>
         </member>
-        <member name="P:SHOPFLIX.OrderResponseModel.Total">
+        <member name="F:SHOPFLIX.OrderResponseModel.mSCountry">
             <summary>
-            The order total
+            The member of the <see cref="P:SHOPFLIX.OrderResponseModel.SCountry"/> property
             </summary>
         </member>
-        <member name="P:SHOPFLIX.OrderResponseModel.InvoiceId">
+        <member name="F:SHOPFLIX.OrderResponseModel.mSCountryDescr">
             <summary>
-            The invoice id
+            The member of the <see cref="P:SHOPFLIX.OrderResponseModel.SCountryDescr"/> property
             </summary>
         </member>
-        <member name="P:SHOPFLIX.OrderResponseModel.CreditMemoId">
+        <member name="F:SHOPFLIX.OrderResponseModel.mSFirstName">
             <summary>
-            The credit memo id
+            The member of the <see cref="P:SHOPFLIX.OrderResponseModel.SFirstName"/> property
             </summary>
         </member>
-        <member name="P:SHOPFLIX.OrderResponseModel.Points">
+        <member name="F:SHOPFLIX.OrderResponseModel.mSLastName">
             <summary>
-            The points
+            The member of the <see cref="P:SHOPFLIX.OrderResponseModel.SLastName"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.OrderResponseModel.mSPhone">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.OrderResponseModel.SPhone"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.OrderResponseModel.mSState">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.OrderResponseModel.SState"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.OrderResponseModel.mSStateDescr">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.OrderResponseModel.SStateDescr"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.OrderResponseModel.mSZipCode">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.OrderResponseModel.SZipCode"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.OrderResponseModel.mBAddress">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.OrderResponseModel.BAddress"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.OrderResponseModel.mBAddress2">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.OrderResponseModel.BAddress2"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.OrderResponseModel.mBCity">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.OrderResponseModel.BCity"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.OrderResponseModel.mBCountry">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.OrderResponseModel.BCountry"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.OrderResponseModel.mBCountryDescr">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.OrderResponseModel.BCountryDescr"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.OrderResponseModel.mBFirstName">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.OrderResponseModel.BFirstName"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.OrderResponseModel.mBLastName">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.OrderResponseModel.BLastName"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.OrderResponseModel.mBPhone">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.OrderResponseModel.BPhone"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.OrderResponseModel.mBState">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.OrderResponseModel.BState"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.OrderResponseModel.mBStateDescr">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.OrderResponseModel.BStateDescr"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.OrderResponseModel.mBZipCode">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.OrderResponseModel.BZipCode"/> property
             </summary>
         </member>
         <member name="P:SHOPFLIX.OrderResponseModel.Products">
             <summary>
             The products of the order
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.OrderResponseModel.Fields">
+            <summary>
+            The fields
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.OrderResponseModel.OrderReference">
+            <summary>
+            The order reference
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.OrderResponseModel.LastOrderChange">
+            <summary>
+            The last change of the order
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.OrderResponseModel.IPAddress">
+            <summary>
+            The customer's IP address 
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.OrderResponseModel.LangCode">
+            <summary>
+            The code of the language which the customer selected when placing the order, for example el 
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.OrderResponseModel.LocalizationId">
+            <summary>
+            ID of the localization. Note: Localizations are deprecated and disabled by default.
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.OrderResponseModel.Discount">
+            <summary>
+            The total discount
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.OrderResponseModel.Subtotal">
+            <summary>
+            The order subtotal
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.OrderResponseModel.SubtotalDiscount">
+            <summary>
+            The discount on the order subtotal
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.OrderResponseModel.DisplaySubtotal">
+            <summary>
+            The subtotal that will be displayed
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.OrderResponseModel.PaymentId">
+            <summary>
+            The id of the payment method
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.OrderResponseModel.PaymentInfo">
+            <summary>
+            Payment information
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.OrderResponseModel.PaymentMethod">
+            <summary>
+            The settings of the payment method
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.OrderResponseModel.PaymentSurcharge">
+            <summary>
+            The amount of payment surcharge
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.OrderResponseModel.WasRepaid">
+            <summary>
+            Indicates if the order was repaid
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.OrderResponseModel.PromotionIds">
+            <summary>
+            A string of promotion IDs separated by commas
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.OrderResponseModel.Promotions">
+            <summary>
+            The data of applicable promotions
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.OrderResponseModel.IsShippingRequired">
+            <summary>
+            Defines if the order requires shipping
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.OrderResponseModel.ShippingIds">
+            <summary>
+            The IDs of the shipping methods
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.OrderResponseModel.Shipping">
+            <summary>
+            The data of the shipping methods used in the order.
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.OrderResponseModel.ShippingId">
+            <summary>
+            The ID of the shipping method 
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.OrderResponseModel.IsShipmentRequired">
+            <summary>
+            Defines if the order requires shipments.
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.OrderResponseModel.ShipmentIds">
+            <summary>
+            A string of shipment IDs separated by commas.
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.OrderResponseModel.ShippingCost">
+            <summary>
+            The shipping cost
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.OrderResponseModel.DisplayShippingCost">
+            <summary>
+            The shipping cost that will be displayed
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.OrderResponseModel.IsTaxExempt">
+            <summary>
+            Determines if the customer is exempt from taxes
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.OrderResponseModel.TaxSubtotal">
+            <summary>
+            The subtotal of the tax
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.OrderResponseModel.Taxes">
+            <summary>
+            The data of the applicable taxes
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.OrderResponseModel.Notes">
+            <summary>
+            Customer’s notes about the order
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.OrderResponseModel.Details">
+            <summary>
+            Administrator’s notes about the order
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.OrderResponseModel.SAddress">
+            <summary>
+            The shipping address
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.OrderResponseModel.SAddress2">
+            <summary>
+            The second shipping address
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.OrderResponseModel.SCity">
+            <summary>
+            The shipping city
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.OrderResponseModel.SCountry">
+            <summary>
+            The 2-letter shipping country code
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.OrderResponseModel.SCountryDescr">
+            <summary>
+            The country name
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.OrderResponseModel.SFirstName">
+            <summary>
+            The shipping first name
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.OrderResponseModel.SLastName">
+            <summary>
+            The shipping last name
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.OrderResponseModel.SPhone">
+            <summary>
+            The shipping phone number
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.OrderResponseModel.SState">
+            <summary>
+            The shipping state code
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.OrderResponseModel.SStateDescr">
+            <summary>
+            The shipping state name
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.OrderResponseModel.SZipCode">
+            <summary>
+            The shipping zip code
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.OrderResponseModel.BAddress">
+            <summary>
+            The billing address
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.OrderResponseModel.BAddress2">
+            <summary>
+            The second billing address
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.OrderResponseModel.BCity">
+            <summary>
+            The billing city
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.OrderResponseModel.BCountry">
+            <summary>
+            The 2-letter billing country code 
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.OrderResponseModel.BCountryDescr">
+            <summary>
+            The billing country name
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.OrderResponseModel.BFirstName">
+            <summary>
+            The billing first name
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.OrderResponseModel.BLastName">
+            <summary>
+            The billing last name
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.OrderResponseModel.BPhone">
+            <summary>
+            The billing phone
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.OrderResponseModel.BState">
+            <summary>
+            The billing state code
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.OrderResponseModel.BStateDescr">
+            <summary>
+            The billing state name
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.OrderResponseModel.BZipCode">
+            <summary>
+            The billing zip code
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.OrderResponseModel.ProductsInternal">
+            <summary>
+            An internal property used for correctly deserializing the retarded JSON structure 
+            we have been provided
             </summary>
         </member>
         <member name="M:SHOPFLIX.OrderResponseModel.#ctor">
@@ -647,7 +1168,12 @@
         </member>
         <member name="T:SHOPFLIX.OrdersResponseModel">
             <summary>
-            Represents a collection of <see cref="T:SHOPFLIX.OrderResponseModel"/>s
+            Represents a collection of <see cref="T:SHOPFLIX.MinimalOrderResponseModel"/>s
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.OrdersResponseModel.mOrders">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.OrdersResponseModel.Orders"/>
             </summary>
         </member>
         <member name="P:SHOPFLIX.OrdersResponseModel.Orders">
@@ -670,6 +1196,21 @@
             Represents a set of parameters
             </summary>
         </member>
+        <member name="F:SHOPFLIX.ParametersResponseModel.mStatus">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.ParametersResponseModel.Status"/> property
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.ParametersResponseModel.DateFrom">
+            <summary>
+            The date from
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.ParametersResponseModel.DateTo">
+            <summary>
+            The date to
+            </summary>
+        </member>
         <member name="P:SHOPFLIX.ParametersResponseModel.Page">
             <summary>
             The number of pages
@@ -680,29 +1221,9 @@
             Shows how many items there are on a page
             </summary>
         </member>
-        <member name="P:SHOPFLIX.ParametersResponseModel.AjaxCustom">
+        <member name="P:SHOPFLIX.ParametersResponseModel.Status">
             <summary>
-            Ajax custom
-            </summary>
-        </member>
-        <member name="P:SHOPFLIX.ParametersResponseModel.DoesIncludeIncompleted">
-            <summary>
-            A flag that shows if incompleted orders are included
-            </summary>
-        </member>
-        <member name="P:SHOPFLIX.ParametersResponseModel.SortOrder">
-            <summary>
-            Shows if the order is descending or ascending
-            </summary>
-        </member>
-        <member name="P:SHOPFLIX.ParametersResponseModel.SortBy">
-            <summary>
-            How the list is sorted
-            </summary>
-        </member>
-        <member name="P:SHOPFLIX.ParametersResponseModel.SortOrderRev">
-            <summary>
-            The reverse of the <see cref="P:SHOPFLIX.ParametersResponseModel.SortOrder"/>
+            The status
             </summary>
         </member>
         <member name="P:SHOPFLIX.ParametersResponseModel.TotalItems">
@@ -718,9 +1239,139 @@
         <member name="M:SHOPFLIX.ParametersResponseModel.ToString">
             <inheritdoc/>
         </member>
+        <member name="T:SHOPFLIX.ShipingResponseModel">
+            <summary>
+            The Shipment ids as represented in the <see cref="T:SHOPFLIX.OrderResponseModel"/>
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.ShipingResponseModel.mName">
+            <summary>
+            The member off the <see cref="P:SHOPFLIX.ShipingResponseModel.Name"/> property
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.ShipingResponseModel.Name">
+            <summary>
+            The shipment ids
+            </summary>
+        </member>
+        <member name="M:SHOPFLIX.ShipingResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:SHOPFLIX.MinimalReturnResponseModel">
+            <summary>
+            Represents the basic information of a return
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.MinimalReturnResponseModel.mReturnOrderReference">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.MinimalReturnResponseModel.ReturnOrderReference"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.MinimalReturnResponseModel.mPhone">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.MinimalReturnResponseModel.Phone"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.MinimalReturnResponseModel.mEmail">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.MinimalReturnResponseModel.Email"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.MinimalReturnResponseModel.mFirstName">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.MinimalReturnResponseModel.FirstName"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.MinimalReturnResponseModel.mLastName">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.MinimalReturnResponseModel.LastName"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.MinimalReturnResponseModel.mOrderReference">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.MinimalReturnResponseModel.OrderReference"/> property
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.MinimalReturnResponseModel.ReturnOrderReference">
+            <summary>
+            The return order reference
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.MinimalReturnResponseModel.Phone">
+            <summary>
+            The phone
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.MinimalReturnResponseModel.OrderReference">
+            <summary>
+            The order reference
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.MinimalReturnResponseModel.LastName">
+            <summary>
+            The last name
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.MinimalReturnResponseModel.FirstName">
+            <summary>
+            The first name
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.MinimalReturnResponseModel.Email">
+            <summary>
+            The email
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.MinimalReturnResponseModel.OrderId">
+            <summary>
+            The order id
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.MinimalReturnResponseModel.ReturnOrderId">
+            <summary>
+            The return order id
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.MinimalReturnResponseModel.UserId">
+            <summary>
+            The id of the customer
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.MinimalReturnResponseModel.Total">
+            <summary>
+            The order total
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.MinimalReturnResponseModel.ShippingCost">
+            <summary>
+            The order shipping cost
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.MinimalReturnResponseModel.Timestamp">
+            <summary>
+            The timestamp
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.MinimalReturnResponseModel.Status">
+            <summary>
+            The order status
+            </summary>
+        </member>
+        <member name="M:SHOPFLIX.MinimalReturnResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
         <member name="T:SHOPFLIX.ReturnProductResponseModel">
             <summary>
-            Represents a product in a <see cref="T:SHOPFLIX.ReturnResponseModel"/>
+            Represents a product in a <see cref="T:SHOPFLIX.MinimalReturnResponseModel"/>
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.ReturnProductResponseModel.mReasonText">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.ReturnProductResponseModel.ReasonText"/> property
             </summary>
         </member>
         <member name="P:SHOPFLIX.ReturnProductResponseModel.ReasonId">
@@ -740,57 +1391,308 @@
         </member>
         <member name="T:SHOPFLIX.ReturnResponseModel">
             <summary>
-            Represents a single return 
+            Represents the full information of a return
             </summary>
         </member>
-        <member name="F:SHOPFLIX.ReturnResponseModel.mProducts">
+        <member name="F:SHOPFLIX.ReturnResponseModel.mCompanyId">
             <summary>
-            The member of the <see cref="P:SHOPFLIX.ReturnResponseModel.Products"/> property
+            The member of the <see cref="P:SHOPFLIX.ReturnResponseModel.CompanyId"/> property
             </summary>
         </member>
-        <member name="P:SHOPFLIX.ReturnResponseModel.OrderId">
+        <member name="F:SHOPFLIX.ReturnResponseModel.mSAddressType">
             <summary>
-            The order id
+            THe member of the <see cref="P:SHOPFLIX.ReturnResponseModel.SAddressType"/> property
             </summary>
         </member>
-        <member name="P:SHOPFLIX.ReturnResponseModel.ReturnOrderId">
+        <member name="F:SHOPFLIX.ReturnResponseModel.mCompanyName">
             <summary>
-            The return order id
+            THe member of the <see cref="P:SHOPFLIX.ReturnResponseModel.CompanyName"/> property
             </summary>
         </member>
-        <member name="P:SHOPFLIX.ReturnResponseModel.UserId">
+        <member name="F:SHOPFLIX.ReturnResponseModel.mLastOrderChange">
             <summary>
-            The id of the customer
+            THe member of the <see cref="P:SHOPFLIX.ReturnResponseModel.LastOrderChange"/> property
             </summary>
         </member>
-        <member name="P:SHOPFLIX.ReturnResponseModel.Total">
+        <member name="F:SHOPFLIX.ReturnResponseModel.mShipmentIds">
             <summary>
-            The order total
+            The member of the <see cref="P:SHOPFLIX.ReturnResponseModel.ShipmentIds"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.ReturnResponseModel.mNotes">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.ReturnResponseModel.Notes"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.ReturnResponseModel.mSAddress">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.ReturnResponseModel.SAddress"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.ReturnResponseModel.mSAddress2">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.ReturnResponseModel.SAddress2"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.ReturnResponseModel.mSCity">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.ReturnResponseModel.SCity"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.ReturnResponseModel.mSCountry">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.ReturnResponseModel.SCountry"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.ReturnResponseModel.mSCountryDescr">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.ReturnResponseModel.SCountryDescr"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.ReturnResponseModel.mSFirstName">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.ReturnResponseModel.SFirstName"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.ReturnResponseModel.mSLastName">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.ReturnResponseModel.SLastName"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.ReturnResponseModel.mSPhone">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.ReturnResponseModel.SPhone"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.ReturnResponseModel.mSState">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.ReturnResponseModel.SState"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.ReturnResponseModel.mSStateDescr">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.ReturnResponseModel.SStateDescr"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.ReturnResponseModel.mSZipCode">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.ReturnResponseModel.SZipCode"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.ReturnResponseModel.mBAddress">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.ReturnResponseModel.BAddress"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.ReturnResponseModel.mBAddress2">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.ReturnResponseModel.BAddress2"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.ReturnResponseModel.mBCity">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.ReturnResponseModel.BCity"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.ReturnResponseModel.mBCountry">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.ReturnResponseModel.BCountry"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.ReturnResponseModel.mBCountryDescr">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.ReturnResponseModel.BCountryDescr"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.ReturnResponseModel.mBFirstName">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.ReturnResponseModel.BFirstName"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.ReturnResponseModel.mBLastName">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.ReturnResponseModel.BLastName"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.ReturnResponseModel.mBPhone">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.ReturnResponseModel.BPhone"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.ReturnResponseModel.mBState">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.ReturnResponseModel.BState"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.ReturnResponseModel.mBStateDescr">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.ReturnResponseModel.BStateDescr"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.ReturnResponseModel.mBZipCode">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.ReturnResponseModel.BZipCode"/> property
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.ReturnResponseModel.SAddressType">
+            <summary>
+            The shipping zip code
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.ReturnResponseModel.CompanyName">
+            <summary>
+            The company name
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.ReturnResponseModel.CompanyId">
+            <summary>
+            The company ID
             </summary>
         </member>
         <member name="P:SHOPFLIX.ReturnResponseModel.Subtotal">
             <summary>
-            The order cost of products
+            The order subtotal
             </summary>
         </member>
-        <member name="P:SHOPFLIX.ReturnResponseModel.ShippingCost">
+        <member name="P:SHOPFLIX.ReturnResponseModel.ShipmentIds">
             <summary>
-            The order shipping cost
+            A string of shipment IDs separated by commas.
             </summary>
         </member>
-        <member name="P:SHOPFLIX.ReturnResponseModel.Timestamp">
+        <member name="P:SHOPFLIX.ReturnResponseModel.SZipCode">
             <summary>
-            The timestamp
+            The shipping zip code
             </summary>
         </member>
-        <member name="P:SHOPFLIX.ReturnResponseModel.Status">
+        <member name="P:SHOPFLIX.ReturnResponseModel.SStateDescr">
             <summary>
-            The order status
+            The shipping state name
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.ReturnResponseModel.SState">
+            <summary>
+            The shipping state code
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.ReturnResponseModel.SPhone">
+            <summary>
+            The shipping phone number
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.ReturnResponseModel.SLastName">
+            <summary>
+            The shipping last name
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.ReturnResponseModel.SFirstName">
+            <summary>
+            The shipping first name
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.ReturnResponseModel.SCountryDescr">
+            <summary>
+            The country name
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.ReturnResponseModel.SCountry">
+            <summary>
+            The 2-letter shipping country code
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.ReturnResponseModel.SCity">
+            <summary>
+            The shipping city
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.ReturnResponseModel.SAddress2">
+            <summary>
+            The second shipping address
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.ReturnResponseModel.SAddress">
+            <summary>
+            The shipping address
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.ReturnResponseModel.Notes">
+            <summary>
+            Customer’s notes about the order
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.ReturnResponseModel.LastOrderChange">
+            <summary>
+            The last change of the order
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.ReturnResponseModel.Fields">
+            <summary>
+            The fields
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.ReturnResponseModel.BZipCode">
+            <summary>
+            The billing zip code
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.ReturnResponseModel.BStateDescr">
+            <summary>
+            The billing state name
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.ReturnResponseModel.BState">
+            <summary>
+            The billing state code
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.ReturnResponseModel.BPhone">
+            <summary>
+            The billing phone
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.ReturnResponseModel.BLastName">
+            <summary>
+            The billing last name
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.ReturnResponseModel.BFirstName">
+            <summary>
+            The billing first name
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.ReturnResponseModel.BCountryDescr">
+            <summary>
+            The billing country name
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.ReturnResponseModel.BCountry">
+            <summary>
+            The 2-letter billing country code 
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.ReturnResponseModel.BCity">
+            <summary>
+            The billing city
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.ReturnResponseModel.BAddress2">
+            <summary>
+            The second billing address
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.ReturnResponseModel.BAddress">
+            <summary>
+            The billing address
             </summary>
         </member>
         <member name="P:SHOPFLIX.ReturnResponseModel.Products">
             <summary>
-            A list of the products that are be returned
+            The products of the return
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.ReturnResponseModel.ProductsInternal">
+            <summary>
+            An internal property used for correctly deserializing the retarded JSON structure 
+            we have been provided
             </summary>
         </member>
         <member name="M:SHOPFLIX.ReturnResponseModel.#ctor">
@@ -800,7 +1702,22 @@
         </member>
         <member name="T:SHOPFLIX.ReturnsResponseModel">
             <summary>
-            Represents collection of <see cref="T:SHOPFLIX.ReturnResponseModel"/>s
+            Represents collection of <see cref="T:SHOPFLIX.MinimalReturnResponseModel"/>s
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.ReturnsResponseModel.mParameters">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.ReturnsResponseModel.Parameters"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.ReturnsResponseModel.mOrders">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.ReturnsResponseModel.Orders"/> property
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.ReturnsResponseModel.Parameters">
+            <summary>
+            The parameters
             </summary>
         </member>
         <member name="P:SHOPFLIX.ReturnsResponseModel.Orders">
@@ -818,6 +1735,16 @@
             Represents information over the carrier company at <see cref="T:SHOPFLIX.ShipmentResponseModel"/>
             </summary>
         </member>
+        <member name="F:SHOPFLIX.CarrierInfoResponseModel.mName">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.CarrierInfoResponseModel.Name"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.CarrierInfoResponseModel.mTrackingUrl">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.CarrierInfoResponseModel.TrackingUrl"/> property
+            </summary>
+        </member>
         <member name="P:SHOPFLIX.CarrierInfoResponseModel.Name">
             <summary>
             The carrier company name
@@ -833,19 +1760,149 @@
             Default constructor
             </summary>
         </member>
+        <member name="F:SHOPFLIX.ShipmentProductResponseModel.mCode">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.ShipmentProductResponseModel.ProductCode"/> property
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.ShipmentProductResponseModel.Id">
+            <summary>
+            The product id
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.ShipmentProductResponseModel.Amount">
+            <summary>
+            The quantity of the product
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.ShipmentProductResponseModel.BasePrice">
+            <summary>
+            The base price of the product
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.ShipmentProductResponseModel.ItemId">
+            <summary>
+            The item id
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.ShipmentProductResponseModel.OrderId">
+            <summary>
+            The order id
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.ShipmentProductResponseModel.OriginalPrice">
+            <summary>
+            The original price
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.ShipmentProductResponseModel.Price">
+            <summary>
+            The price
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.ShipmentProductResponseModel.ProductCode">
+            <summary>
+            The product code
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.ShipmentProductResponseModel.ProductId">
+            <summary>
+            The product id
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.ShipmentProductResponseModel.TotalPrice">
+            <summary>
+            The total price
+            </summary>
+        </member>
+        <member name="M:SHOPFLIX.ShipmentProductResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
         <member name="T:SHOPFLIX.ShipmentResponseModel">
             <summary>
             Represents a shipment
             </summary>
         </member>
+        <member name="F:SHOPFLIX.ShipmentResponseModel.mProductsInfo">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.ShipmentResponseModel.ProductsInfo"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.ShipmentResponseModel.mOrderReference">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.ShipmentResponseModel.OrderReference"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.ShipmentResponseModel.mComments">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.ShipmentResponseModel.Comments"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.ShipmentResponseModel.mSFirstName">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.ShipmentResponseModel.SFirstName"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.ShipmentResponseModel.mSLastName">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.ShipmentResponseModel.SLastName"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.ShipmentResponseModel.mFirstName">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.ShipmentResponseModel.FirstName"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.ShipmentResponseModel.mLastName">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.ShipmentResponseModel.LastName"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.ShipmentResponseModel.mCompany">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.ShipmentResponseModel.Company"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.ShipmentResponseModel.mShipping">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.ShipmentResponseModel.Shipping"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.ShipmentResponseModel.mTrackingNumber">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.ShipmentResponseModel.TrackingNumber"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.ShipmentResponseModel.mCarrier">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.ShipmentResponseModel.Carrier"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.ShipmentResponseModel.mFunshipChargeType">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.ShipmentResponseModel.FunshipChargeType"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.ShipmentResponseModel.mFunshipShipmentStatus">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.ShipmentResponseModel.FunshipShipmentStatus"/> property
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.ShipmentResponseModel.Products">
+            <summary>
+            The products of the order
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.ShipmentResponseModel.OrderReference">
+            <summary>
+            The order reference
+            </summary>
+        </member>
         <member name="P:SHOPFLIX.ShipmentResponseModel.ShipmentId">
             <summary>
             The shipment id
-            </summary>
-        </member>
-        <member name="P:SHOPFLIX.ShipmentResponseModel.ShipmentTimestamp">
-            <summary>
-            The shipment timestamp
             </summary>
         </member>
         <member name="P:SHOPFLIX.ShipmentResponseModel.Comments">
@@ -868,22 +1925,22 @@
             The order timestamp
             </summary>
         </member>
-        <member name="P:SHOPFLIX.ShipmentResponseModel.SFirstname">
+        <member name="P:SHOPFLIX.ShipmentResponseModel.SFirstName">
             <summary>
             The shipment first name
             </summary>
         </member>
-        <member name="P:SHOPFLIX.ShipmentResponseModel.SLastname">
+        <member name="P:SHOPFLIX.ShipmentResponseModel.SLastName">
             <summary>
             The shipment last name
             </summary>
         </member>
-        <member name="P:SHOPFLIX.ShipmentResponseModel.Firstname">
+        <member name="P:SHOPFLIX.ShipmentResponseModel.FirstName">
             <summary>
             The billing first name
             </summary>
         </member>
-        <member name="P:SHOPFLIX.ShipmentResponseModel.Lastname">
+        <member name="P:SHOPFLIX.ShipmentResponseModel.LastName">
             <summary>
             The billing last name
             </summary>
@@ -938,11 +1995,6 @@
             The cod cost
             </summary>
         </member>
-        <member name="P:SHOPFLIX.ShipmentResponseModel.Products">
-            <summary>
-            The products of the shipment
-            </summary>
-        </member>
         <member name="P:SHOPFLIX.ShipmentResponseModel.GroupKey">
             <summary>
             The group key
@@ -968,9 +2020,54 @@
             Default constructor
             </summary>
         </member>
+        <member name="T:SHOPFLIX.ShipmentsProductsInfoResponseModel">
+            <summary>
+            Represents the product info as shown in the <see cref="T:SHOPFLIX.ShipmentResponseModel"/> and <see cref="T:SHOPFLIX.ShipmentsResponseModel"/>
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.ShipmentsProductsInfoResponseModel.mProductsInfo">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.ShipmentsProductsInfoResponseModel.ProductId"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.ShipmentsProductsInfoResponseModel.mProductQuantity">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.ShipmentsProductsInfoResponseModel.ProductQuantity"/> property
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.ShipmentsProductsInfoResponseModel.ProductId">
+            <summary>
+            The product id
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.ShipmentsProductsInfoResponseModel.ProductQuantity">
+            <summary>
+            The product quantity
+            </summary>
+        </member>
+        <member name="M:SHOPFLIX.ShipmentsProductsInfoResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
         <member name="T:SHOPFLIX.ShipmentsResponseModel">
             <summary>
             Represents a collection of <see cref="T:SHOPFLIX.ShipmentResponseModel"/>
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.ShipmentsResponseModel.mParameters">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.ShipmentsResponseModel.Parameters"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.ShipmentsResponseModel.mShipments">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.ShipmentsResponseModel.Shipments"/> property
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.ShipmentsResponseModel.Parameters">
+            <summary>
+            The parameters
             </summary>
         </member>
         <member name="P:SHOPFLIX.ShipmentsResponseModel.Shipments">
@@ -1128,15 +2225,1170 @@
             Provides enumeration over the voucher formats
             </summary>
         </member>
-        <member name="F:SHOPFLIX.VoucherFormat.Pdf">
+        <member name="F:SHOPFLIX.VoucherFormat.PDF">
             <summary>
             PDF format
             </summary>
         </member>
         <member name="F:SHOPFLIX.VoucherFormat.Clean">
             <summary>
-            Simple file
+            A PDF without graphics (Colors / Images)
             </summary>
+        </member>
+        <member name="T:SHOPFLIX.BaseQueryArgumentConverter`1">
+            <summary>
+            The base for all the query argument converters.
+            </summary>
+            <typeparam name="TValue">The type of the value.</typeparam>
+        </member>
+        <member name="M:SHOPFLIX.BaseQueryArgumentConverter`1.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:SHOPFLIX.BaseQueryArgumentConverter`1.Convert(System.Type,System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SHOPFLIX.BaseQueryArgumentConverter`1.Convert(`0)">
+            <inheritdoc/>
+        </member>
+        <member name="T:SHOPFLIX.ExtensionMethods">
+            <summary>
+            Extension methods
+            </summary>
+        </member>
+        <member name="M:SHOPFLIX.ExtensionMethods.AggregateExceptionMessages(System.Exception)">
+            <summary>
+            Aggregates the <see cref="P:System.Exception.Message"/> in the <paramref name="exception"/> exception stack trace
+            </summary>
+            <param name="exception">The exception</param>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.ExtensionMethods.IsNullOrEmpty(System.String)">
+            <summary>
+            Checks whether the string is null or empty
+            </summary>
+            <param name="value">The value</param>
+            <returns>Returns true if the string is null or empty, false otherwise</returns>
+        </member>
+        <member name="M:SHOPFLIX.ExtensionMethods.IsNullOrEmpty(System.Collections.IEnumerable)">
+            <summary>
+            Checks if the specified <paramref name="enumerable"/> is <see cref="!:null"/> or 
+            if it doesn't have any items.
+            </summary>
+            <param name="enumerable">The enumerable</param>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.ExtensionMethods.AggregateString``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.String},System.Func{System.String,System.String,System.String})">
+            <summary>
+            Aggregates the specified <paramref name="source"/> into a <see cref="T:System.String"/>
+            </summary>
+            <typeparam name="T">The type of the items</typeparam>
+            <param name="source">The source</param>
+            <param name="extractor">The string extractor that is used to convert an item to a string</param>
+            <param name="func">Delegate that places the extracted strings in order</param>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.ExtensionMethods.AggregateString``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.String},System.String)">
+            <summary>
+            Aggregates the specified <paramref name="source"/> into a <see cref="T:System.String"/>
+            </summary>
+            <typeparam name="T">The type of the items</typeparam>
+            <param name="source">The source</param>
+            <param name="extractor">The string extractor that is used to convert an item to a string</param>
+            <param name="separator">The separator</param>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.ExtensionMethods.AggregateString``1(System.Collections.Generic.IEnumerable{``0},System.Func{System.String,System.String,System.String})">
+            <summary>
+            Aggregates the specified <paramref name="source"/> into a <see cref="T:System.String"/>.
+            NOTE: This method converts the items of the <paramref name="source"/> to <see cref="T:System.String"/>
+                  using the <see cref="M:System.Object.ToString"/> method!
+            </summary>
+            <typeparam name="T">The type of the items</typeparam>
+            <param name="source">The source</param>
+            <param name="func">Delegate that places the extracted strings in order</param>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.ExtensionMethods.AggregateString``1(System.Collections.Generic.IEnumerable{``0},System.String)">
+            <summary>
+            Aggregates the specified <paramref name="source"/> into a <see cref="T:System.String"/>.
+            NOTE: This method converts the items of the <paramref name="source"/> to <see cref="T:System.String"/>
+                  using the <see cref="M:System.Object.ToString"/> method!
+            NOTE: This method uses ", " as the items separator!
+            </summary>
+            <typeparam name="T">The type of the items</typeparam>
+            <param name="source">The source</param>
+            <param name="separator">The separator</param>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.ExtensionMethods.ToISO8601String(System.DateOnly)">
+            <summary>
+            Returns a string that represents the specified <paramref name="value"/> using the ISO8601 format
+            </summary>
+            <param name="value">The value</param>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.ExtensionMethods.ToISO8601String(System.DateTimeOffset)">
+            <summary>
+            Returns a string that represents the specified <paramref name="dto"/> using the ISO8601 format
+            </summary>
+            <param name="dto">The date time offset</param>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.ExtensionMethods.ToISO8601String(System.TimeOnly)">
+            <summary>
+            Returns a string that represents the specified <paramref name="value"/> using the ISO8601 format
+            </summary>
+            <param name="value">The value</param>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.ExtensionMethods.ToISO8601String(System.DateTime)">
+            <summary>
+            Returns a string that represents the specified <paramref name="dt"/> using the ISO8601 format
+            </summary>
+            <param name="dt">The date time</param>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.ExtensionMethods.FirstCharToLower(System.String)">
+            <summary>
+            Returns the specified <paramref name="s"/> with the first char converted to lower case
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.ExtensionMethods.IsDate(System.Type)">
+            <summary>
+            Checks if the specified <paramref name="type"/> is a type that represents a date
+            </summary>
+            <param name="type">The type</param>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.ExtensionMethods.IsEnumerable(System.Type)">
+            <summary>
+            Checks whether the specified <paramref name="type"/> implements the <see cref="T:System.Collections.IEnumerable"/>
+            or it's it self the <see cref="T:System.Collections.IEnumerable"/>
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.ExtensionMethods.NotNullOrEmpty(System.String)">
+            <summary>
+            Returns the specified <paramref name="value"/> if it's not null or empty,
+            otherwise it throws an <see cref="T:System.ArgumentNullException"/>
+            </summary>
+            <param name="value">The value</param>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.ExtensionMethods.CreateWebRequestResultAsync(System.Net.Http.HttpResponseMessage)">
+            <summary>
+            Returns a <see cref="T:SHOPFLIX.WebRequestResult"/> pre-populated with the <see cref="T:System.Net.HttpWebResponse"/> information
+            </summary>
+            <param name="serverResponse">The server response</param>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.ExtensionMethods.CreateWebRequestResultFromStreamAsync(System.Net.Http.HttpResponseMessage)">
+            <summary>
+            Returns a <see cref="T:SHOPFLIX.WebRequestResult`1"/> pre-populated with the <see cref="T:System.Net.HttpWebResponse"/> information
+            read as stream
+            </summary>
+            <param name="serverResponse">The server response</param>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.ExtensionMethods.CreateWebRequestResultAsync``1(System.Net.Http.HttpResponseMessage)">
+            <summary>
+            Returns a <see cref="T:SHOPFLIX.WebRequestResult`1"/> pre-populated with the <see cref="T:System.Net.HttpWebResponse"/> information
+            </summary>
+            <typeparam name="TResponse">The type of response to create</typeparam>
+            <param name="serverResponse">The server response</param>
+            <returns></returns>
+        </member>
+        <member name="T:SHOPFLIX.Failable">
+            <summary>
+            The default implementation of the <see cref="T:SHOPFLIX.IFailable"/> interface
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.Failable.mException">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.Failable.Exception"/> property
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.Failable.Exception">
+            <summary>
+            The exception that was thrown
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.Failable.ErrorMessage">
+            <summary>
+            The error message
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.Failable.IsSuccessful">
+            <summary>
+            A flag indicating whether the task was successful or not
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.Failable.Success">
+            <summary>
+            The instance of the <see cref="T:SHOPFLIX.Failable"/> that indicates a successful operation
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.Failable.OperationAbortedErrorMessage">
+            <summary>
+            Error message indicating that the operation was aborted
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.Failable.OperationAborted">
+            <summary>
+            The instance of the <see cref="T:SHOPFLIX.Failable"/> that is used for indicating an operation
+            that was aborted with a hidden error
+            </summary>
+        </member>
+        <member name="M:SHOPFLIX.Failable.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:SHOPFLIX.Failable.#ctor(System.Exception)">
+            <summary>
+            Exception based constructor
+            </summary>
+            <param name="ex">The exception</param>
+        </member>
+        <member name="M:SHOPFLIX.Failable.FromException(System.Exception)">
+            <summary>
+            Creates and returns a <see cref="T:SHOPFLIX.Failable"/> from the specified <paramref name="ex"/>
+            </summary>
+            <param name="ex">The exception</param>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.Failable.FromErrorMessage(System.String)">
+            <summary>
+            Creates and returns a <see cref="T:SHOPFLIX.Failable"/> from the specified <paramref name="errorMessage"/>
+            </summary>
+            <param name="errorMessage">The error message</param>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.Failable.FromResult``1(``0)">
+            <summary>
+            Creates and returns a <see cref="T:SHOPFLIX.Failable`1"/> that represents the specified <paramref name="result"/>
+            </summary>
+            <typeparam name="T">The type of the result</typeparam>
+            <param name="result">The result</param>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.Failable.FromException``1(System.Exception)">
+            <summary>
+            Creates and returns a <see cref="T:SHOPFLIX.Failable`1"/> that represents the specified <paramref name="ex"/>
+            </summary>
+            <typeparam name="T">The type of the result</typeparam>
+            <param name="ex">The exception</param>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.Failable.FromErrorMessage``1(System.String)">
+            <summary>
+            Creates and returns a <see cref="T:SHOPFLIX.Failable`1"/> that represents the specified <paramref name="errorMessage"/>
+            </summary>
+            <typeparam name="T">The type of the result</typeparam>
+            <param name="errorMessage">The error message</param>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.Failable.FromAbortedOperation``1">
+            <summary>
+            Creates and returns a <see cref="T:SHOPFLIX.Failable`1"/> that represents an aborted operation
+            </summary>
+            <typeparam name="T">The type of the result</typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.Failable.ToString">
+            <summary>
+            Returns a string that represents the current object
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.Failable.op_Implicit(System.String)~SHOPFLIX.Failable">
+            <summary>
+            Creates a <see cref="T:SHOPFLIX.Failable"/> using the specified string as its error message
+            </summary>
+            <param name="s">The string</param>
+        </member>
+        <member name="M:SHOPFLIX.Failable.op_Implicit(System.Exception)~SHOPFLIX.Failable">
+            <summary>
+            Creates a <see cref="T:SHOPFLIX.Failable"/> using the message of the specified ex and its inner exceptions
+            as its error message
+            </summary>
+            <param name="ex">The exception</param>
+        </member>
+        <member name="T:SHOPFLIX.SuccessOnlyFailable">
+            <summary>
+            An internal implementation of the <see cref="T:SHOPFLIX.Failable"/> that always has
+            a successful state
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.SuccessOnlyFailable.ErrorMessage">
+            <summary>
+            The error message
+            </summary>
+        </member>
+        <member name="M:SHOPFLIX.SuccessOnlyFailable.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:SHOPFLIX.OperationAbortedOnlyFailable">
+            <summary>
+            An internal implementation of the <see cref="T:SHOPFLIX.Failable"/> that is used for 
+            indicating an aborted operation
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.OperationAbortedOnlyFailable.ErrorMessage">
+            <summary>
+            The error message
+            </summary>
+        </member>
+        <member name="M:SHOPFLIX.OperationAbortedOnlyFailable.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:SHOPFLIX.Failable`1">
+            <summary>
+            The default implementation of the <see cref="T:SHOPFLIX.IFailable`1"/> interface
+            </summary>
+            <typeparam name="TResult">The type of the result</typeparam>
+        </member>
+        <member name="F:SHOPFLIX.Failable`1.ExceptionMessage">
+            <summary>
+            The error message for the exception
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.Failable`1.mResult">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.Failable`1.Result"/>
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.Failable`1.Result">
+            <summary>
+            The result
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.Failable`1.OperationAborted">
+            <summary>
+            The instance of the <see cref="T:SHOPFLIX.Failable`1"/> that is used for indicating an operation
+            that was aborted with a hidden error
+            </summary>
+        </member>
+        <member name="M:SHOPFLIX.Failable`1.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:SHOPFLIX.Failable`1.#ctor(`0)">
+            <summary>
+            Result based constructor
+            </summary>
+            <param name="result">The result</param>
+        </member>
+        <member name="M:SHOPFLIX.Failable`1.#ctor(System.Exception)">
+            <summary>
+            Exception based constructor
+            </summary>
+            <param name="ex">The exception</param>
+        </member>
+        <member name="M:SHOPFLIX.Failable`1.ToString">
+            <summary>
+            Returns a string that represents the current object
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.Failable`1.op_Implicit(System.String)~SHOPFLIX.Failable{`0}">
+            <summary>
+            Creates a <see cref="T:SHOPFLIX.Failable`1"/> using the specified string as its error message
+            </summary>
+            <param name="s">The string</param>
+        </member>
+        <member name="M:SHOPFLIX.Failable`1.op_Implicit(System.Exception)~SHOPFLIX.Failable{`0}">
+            <summary>
+            Creates a <see cref="T:SHOPFLIX.Failable`1"/> using the message of the specified ex and its inner exceptions
+            as its error message
+            </summary>
+            <param name="ex">The exception</param>
+        </member>
+        <member name="M:SHOPFLIX.Failable`1.op_Implicit(`0)~SHOPFLIX.Failable{`0}">
+            <summary>
+            Creates a <see cref="T:SHOPFLIX.Failable`1"/> using the specified result as its result
+            </summary>
+            <param name="result">The result</param>
+        </member>
+        <member name="T:SHOPFLIX.OperationAbortedOnlyFailable`1">
+            <summary>
+            An internal implementation of the <see cref="T:SHOPFLIX.Failable`1"/> that is used for 
+            indicating an aborted operation
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.OperationAbortedOnlyFailable`1.ErrorMessage">
+            <summary>
+            The error message
+            </summary>
+        </member>
+        <member name="M:SHOPFLIX.OperationAbortedOnlyFailable`1.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:SHOPFLIX.IFailable">
+            <summary>
+            Provides abstractions for an object that can fail its task
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.IFailable.Success">
+            <summary>
+            The instance of the <see cref="T:SHOPFLIX.IFailable"/> that indicates a successful operation
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.IFailable.OperationAborted">
+            <summary>
+            The instance of the <see cref="T:SHOPFLIX.IFailable"/> that is used for indicating an operation
+            that was aborted with a hidden error
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.IFailable.Exception">
+            <summary>
+            The exception that was thrown
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.IFailable.ErrorMessage">
+            <summary>
+            The error message
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.IFailable.IsSuccessful">
+            <summary>
+            A flag indicating whether the task was successful or not
+            </summary>
+        </member>
+        <member name="M:SHOPFLIX.IFailable.FromException(System.Exception)">
+            <summary>
+            Creates and returns a <see cref="T:SHOPFLIX.IFailable"/> from the specified <paramref name="ex"/>
+            </summary>
+            <param name="ex">The exception</param>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.IFailable.FromErrorMessage(System.String)">
+            <summary>
+            Creates and returns a <see cref="T:SHOPFLIX.IFailable"/> from the specified <paramref name="errorMessage"/>
+            </summary>
+            <param name="errorMessage">The error message</param>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.IFailable.FromResult``1(``0)">
+            <summary>
+            Creates and returns a <see cref="T:SHOPFLIX.IFailable`1"/> that represents the specified <paramref name="result"/>
+            </summary>
+            <typeparam name="T">The type of the result</typeparam>
+            <param name="result">The result</param>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.IFailable.FromException``1(System.Exception)">
+            <summary>
+            Creates and returns a <see cref="T:SHOPFLIX.IFailable`1"/> that represents the specified <paramref name="ex"/>
+            </summary>
+            <typeparam name="T">The type of the result</typeparam>
+            <param name="ex">The exception</param>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.IFailable.FromErrorMessage``1(System.String)">
+            <summary>
+            Creates and returns a <see cref="T:SHOPFLIX.Failable`1"/> that represents the specified <paramref name="errorMessage"/>
+            </summary>
+            <typeparam name="T">The type of the result</typeparam>
+            <param name="errorMessage">The error message</param>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.IFailable.FromAbortedOperation``1">
+            <summary>
+            Creates and returns a <see cref="T:SHOPFLIX.IFailable`1"/> that represents an aborted operation
+            </summary>
+            <typeparam name="T">The type of the result</typeparam>
+            <returns></returns>
+        </member>
+        <member name="T:SHOPFLIX.IFailable`1">
+            <summary>
+            A <see cref="T:SHOPFLIX.IFailable"/> that contains a result
+            </summary>
+            <typeparam name="TResult">The type of the result</typeparam>
+        </member>
+        <member name="P:SHOPFLIX.IFailable`1.OperationAborted">
+            <summary>
+            The instance of the <see cref="T:SHOPFLIX.IFailable`1"/> that is used for indicating an operation
+            that was aborted with a hidden error
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.IFailable`1.Result">
+            <summary>
+            The result
+            </summary>
+        </member>
+        <member name="T:SHOPFLIX.IFailableHelpers">
+            <summary>
+            Helper methods for <see cref="T:SHOPFLIX.IFailable"/>
+            </summary>
+        </member>
+        <member name="M:SHOPFLIX.IFailableHelpers.GetStringRepresentation(SHOPFLIX.IFailable)">
+            <summary>
+            Gets the string representation of the specified <paramref name="failable"/>
+            </summary>
+            <param name="failable">The failable</param>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.IFailableHelpers.GetStringRepresentation``1(SHOPFLIX.IFailable{``0})">
+            <summary>
+            Gets the string representation of the specified <paramref name="failable"/>
+            </summary>
+            <param name="failable">The failable</param>
+            <returns></returns>
+        </member>
+        <member name="T:SHOPFLIX.IgnoreAttribute">
+            <summary>
+            Marks an item as ignorable
+            </summary>
+        </member>
+        <member name="M:SHOPFLIX.IgnoreAttribute.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:SHOPFLIX.IQueryArgumentConverter">
+            <summary>
+            Provides abstractions for a query argument converter
+            </summary>
+        </member>
+        <member name="M:SHOPFLIX.IQueryArgumentConverter.Convert(System.Type,System.Object)">
+            <summary>
+            Converts the specified <paramref name="value"/> 
+            </summary>
+            <param name="valueType">The type of the value.</param>
+            <param name="value">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="T:SHOPFLIX.NameAttribute">
+            <summary>
+            Provides name meta data to an item
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.NameAttribute.Name">
+            <summary>
+            The name
+            </summary>
+        </member>
+        <member name="M:SHOPFLIX.NameAttribute.#ctor(System.String)">
+            <summary>
+            Default constructor
+            </summary>
+            <param name="name">The name</param>
+        </member>
+        <member name="T:SHOPFLIX.QueryArgumentConverterAttribute">
+            <summary>
+            Attribute that is used for specifying query argument converter meta data.
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.QueryArgumentConverterAttribute.ConverterType">
+            <summary>
+            The type of the converter
+            </summary>
+        </member>
+        <member name="M:SHOPFLIX.QueryArgumentConverterAttribute.#ctor(System.Type)">
+            <summary>
+            Default constructor
+            </summary>
+            <param name="converterType">The type of the converter</param>
+        </member>
+        <member name="M:SHOPFLIX.QueryArgumentConverterAttribute.CreateConverter">
+            <summary>
+            Creates and returns a converter.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SHOPFLIX.QueryArgumentConverterAttribute`1">
+            <summary>
+            Attribute that is used for specifying query argument converter meta data.
+            </summary>
+            <typeparam name="T">The type of the converter.</typeparam>
+        </member>
+        <member name="M:SHOPFLIX.QueryArgumentConverterAttribute`1.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:SHOPFLIX.RouteHelpers">
+            <summary>
+            Helper methods related to routes
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.RouteHelpers.mTypeToQueryArgumentsMapper">
+            <summary>
+            Maps a type to its query arguments
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.RouteHelpers.mSimpleTypes">
+            <summary>
+            The simple types
+            </summary>
+        </member>
+        <member name="M:SHOPFLIX.RouteHelpers.AttachParameters``1(System.String,``0)">
+            <summary>
+            Attaches the parameters that are specified as properties in the <paramref name="args"/>
+            to the specified <paramref name="url"/>.
+            NOTE: A property can be marked as ignorable using the <see cref="T:SHOPFLIX.IgnoreAttribute"/>!
+            NOTE: A custom property name can be set using the <see cref="T:SHOPFLIX.NameAttribute"/>!
+            </summary>
+            <param name="url">The URL</param>
+            <param name="args">The arguments</param>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.RouteHelpers.AttachParametersCore(System.String,System.Object,System.Type)">
+            <summary>
+            Attaches the parameters that are specified as properties in the <paramref name="args"/>
+            to the specified <paramref name="url"/>.
+            NOTE: A property can be marked as ignorable using the <see cref="T:SHOPFLIX.IgnoreAttribute"/>!
+            NOTE: A custom property name can be set using the <see cref="T:SHOPFLIX.NameAttribute"/>!
+            </summary>
+            <param name="url">The URL</param>
+            <param name="args">The arguments</param>
+            <param name="argumentType">The type of the argument</param>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.RouteHelpers.GetNonNullableType(System.Type)">
+            <summary>
+            Gets the T from the <see cref="T:System.Nullable`1"/> of the specified <paramref name="type"/>
+            when the <paramref name="type"/> is nullable, otherwise it returns the type
+            </summary>
+            <param name="type">The type</param>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.RouteHelpers.IsComplexType(System.Type)">
+            <summary>
+            Checks whether the <paramref name="type"/> is a complex type
+            </summary>
+            <param name="type">The type</param>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.RouteHelpers.FirstCharToLower(System.String)">
+            <summary>
+            Returns the specified <paramref name="s"/> with the first char converted to lower case
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SHOPFLIX.RouteHelpers.PropertyQueryArgumentInfo">
+            <summary>
+            The information for the query argument that is related to a property
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.RouteHelpers.PropertyQueryArgumentInfo.PropertyInfo">
+            <summary>
+            The property
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.RouteHelpers.PropertyQueryArgumentInfo.Name">
+            <summary>
+            The name
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.RouteHelpers.PropertyQueryArgumentInfo.IsDate">
+            <summary>
+            A flag indicating whether the <see cref="P:SHOPFLIX.RouteHelpers.PropertyQueryArgumentInfo.PropertyInfo"/> is a date property
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.RouteHelpers.PropertyQueryArgumentInfo.IsEnumerable">
+            <summary>
+            A flag indicating whether the <see cref="P:SHOPFLIX.RouteHelpers.PropertyQueryArgumentInfo.PropertyInfo"/> is an enumerable property
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.RouteHelpers.PropertyQueryArgumentInfo.Converter">
+            <summary>
+            The converter
+            </summary>
+        </member>
+        <member name="M:SHOPFLIX.RouteHelpers.PropertyQueryArgumentInfo.#ctor(System.Reflection.PropertyInfo,System.String)">
+            <summary>
+            Default constructor
+            </summary>
+            <param name="name">The name</param>
+            <param name="propertyInfo">A flag indicating whether the <see cref="P:SHOPFLIX.RouteHelpers.PropertyQueryArgumentInfo.PropertyInfo"/> is an enumerable property</param>
+        </member>
+        <member name="M:SHOPFLIX.RouteHelpers.PropertyQueryArgumentInfo.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="T:SHOPFLIX.WebRequestsClient`1">
+            <summary>
+            Client that provides HTTP calls for sending and receiving information from a HTTP server
+            </summary>
+            <typeparam name="TAuthenticationArgs">
+            The type of the authentication args.
+            NOTE: The authentication args determine the authentication scheme that will be used against the server!
+            </typeparam>
+        </member>
+        <member name="F:SHOPFLIX.WebRequestsClient`1.PATCH">
+            <summary>
+            The name of the PATCH HTTP method
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.WebRequestsClient`1.MediaTypeJson">
+            <summary>
+            The json request and response preferred media type
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.WebRequestsClient`1.DeserializationErrorMessage">
+            <summary>
+            The standard deserialization error message
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.WebRequestsClient`1.mClient">
+            <summary>
+            THe member of the <see cref="P:SHOPFLIX.WebRequestsClient`1.Client"/> property
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.WebRequestsClient`1.Client">
+            <summary>
+            The HTTP client that is used for sending the HTTP requests
+            NOTE: HTTP client is recommended to be injected as a Singleton in DI
+                  https://stackoverflow.com/questions/4015324/how-to-make-http-post-web-request
+            </summary>
+        </member>
+        <member name="M:SHOPFLIX.WebRequestsClient`1.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:SHOPFLIX.WebRequestsClient`1.PostAsync(System.String,System.Object,`0)">
+            <summary>
+            POSTs a web request to an URL that contains the specified <paramref name="content"/> and returns a <see cref="T:System.Net.Http.HttpResponseMessage"/>
+            </summary>
+            <param name="url">The URL</param>
+            <param name="content">The content to post</param>
+            <param name="authenticationArgs">If specified, provides the Authorization header is set</param>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.WebRequestsClient`1.PostBytesAsync(System.String,System.Object,`0)">
+            <summary>
+            POSTs a web request to an URL that contains the specified <paramref name="content"/> and returns a <see cref="T:SHOPFLIX.WebRequestResult`1"/>
+            </summary>
+            <param name="url">The URL</param>
+            <param name="content">The content to post</param>
+            <param name="authenticationArgs">If specified, provides the Authorization header is set</param>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.WebRequestsClient`1.GetAsync(System.String,`0)">
+            <summary>
+            GETs a web request to a URL and returns a <see cref="T:System.Net.Http.HttpResponseMessage"/>
+            </summary>
+            <param name="url">The URL</param>
+            <param name="authenticationArgs">If specified, provides the Authorization header is set</param>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.WebRequestsClient`1.GetBytesAsync(System.String,`0)">
+            <summary>
+            GETs the bytes that are returned in the <see cref="T:System.Net.Http.HttpResponseMessage"/>
+            </summary>
+            <param name="url">The URL</param>
+            <param name="authenticationArgs">If specified, provides the Authorization header is set</param>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.WebRequestsClient`1.DownloadFileAsync(System.String,System.String,`0)">
+            <summary>
+            Downloads the file from the specified <paramref name="url"/> and saves it at the specified <paramref name="fileName"/>
+            </summary>
+            <param name="url">The URL</param>
+            <param name="fileName">The file path combined with the file name</param>
+            <param name="authenticationArgs">If specified, provides the Authorization header is set</param>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.WebRequestsClient`1.PutAsync(System.String,System.Object,`0,System.Threading.CancellationToken)">
+            <summary>
+            PUTs the specified <paramref name="content"/> at the specified <paramref name="url"/> and returns a <see cref="T:System.Net.Http.HttpResponseMessage"/>
+            </summary>
+            <param name="url">The URL</param>
+            <param name="content">The content to put</param>
+            <param name="authenticationArgs">If specified, provides the Authorization header is set</param>
+            <param name="cancellationToken">The cancellation token</param>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.WebRequestsClient`1.PatchAsync(System.String,System.Object,`0,System.Threading.CancellationToken)">
+            <summary>
+            PATCHes the specified <paramref name="content"/> at the specified <paramref name="url"/> and returns a <see cref="T:System.Net.Http.HttpResponseMessage"/>
+            </summary>
+            <param name="url">The URL</param>
+            <param name="content">The content to patch</param>
+            <param name="authenticationArgs">If specified, provides the Authorization header is set</param>
+            <param name="cancellationToken">The cancellation token</param>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.WebRequestsClient`1.DeleteAsync(System.String,`0,System.Threading.CancellationToken)">
+            <summary>
+            Sends a DELETE request and returns a <see cref="T:System.Net.Http.HttpResponseMessage"/>
+            </summary>
+            <param name="url">The URL</param>
+            <param name="authenticationArgs">If specified, provides the Authorization header is set</param>
+            <param name="cancellationToken">The cancellation token</param>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.WebRequestsClient`1.PostAsync``1(System.String,System.Object,`0)">
+            <summary>
+            POSTs a web request to an URL that contains the specified <paramref name="content"/> and returns a <see cref="T:SHOPFLIX.WebRequestResult`1"/>
+            </summary>
+            <typeparam name="TResponse">The type of the response</typeparam>
+            <param name="url">The URL</param>
+            <param name="content">The content to post</param>
+            <param name="authenticationArgs">If specified, provides the Authorization header is set</param>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.WebRequestsClient`1.GetAsync``1(System.String,`0)">
+            <summary>
+            GETs a web request to a URL and returns a <see cref="T:SHOPFLIX.WebRequestResult`1"/>
+            </summary>
+            <param name="url">The URL</param>
+            <param name="authenticationArgs">If specified, provides the Authorization header is set</param>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.WebRequestsClient`1.PutAsync``1(System.String,System.Object,`0,System.Threading.CancellationToken)">
+            <summary>
+            PUTs the specified <paramref name="content"/> at the specified <paramref name="url"/> and returns a <see cref="T:SHOPFLIX.WebRequestResult`1"/>
+            </summary>
+            <param name="url">The URL</param>
+            <param name="content">The content to put</param>
+            <param name="authenticationArgs">If specified, provides the Authorization header is set</param>
+            <param name="cancellationToken">The cancellation token</param>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.WebRequestsClient`1.PatchAsync``1(System.String,System.Object,`0,System.Threading.CancellationToken)">
+            <summary>
+            Patches the specified <paramref name="content"/> at the specified <paramref name="url"/> and returns a <see cref="T:SHOPFLIX.WebRequestResult`1"/>
+            </summary>
+            <param name="url">The URL</param>
+            <param name="content">The content to patch</param>
+            <param name="authenticationArgs">If specified, provides the Authorization header is set</param>
+            <param name="cancellationToken">The cancellation token</param>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.WebRequestsClient`1.DeleteAsync``1(System.String,`0,System.Threading.CancellationToken)">
+            <summary>
+            Sends a DELETE request and returns a <see cref="T:SHOPFLIX.WebRequestResult`1"/>
+            </summary>
+            <param name="url">The URL</param>
+            <param name="authenticationArgs">If specified, provides the Authorization header is set</param>
+            <param name="cancellationToken">The cancellation token</param>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.WebRequestsClient`1.ShouldLogRequests">
+            <summary>
+            Gets a flag indicating whether the requests should be logged or not
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.WebRequestsClient`1.CreateClient">
+            <summary>
+            Creates and returns an <see cref="T:System.Net.Http.HttpClient"/>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.WebRequestsClient`1.ConfigureClient(System.Net.Http.HttpClient)">
+            <summary>
+            Configures the specified <paramref name="client"/>
+            </summary>
+            <param name="client">The client</param>
+        </member>
+        <member name="M:SHOPFLIX.WebRequestsClient`1.ConfigureStringContent(System.Net.Http.StringContent)">
+            <summary>
+            Configures the specified <paramref name="stringContent"/>
+            </summary>
+            <param name="stringContent">The content</param>
+        </member>
+        <member name="M:SHOPFLIX.WebRequestsClient`1.Serialize(System.Object)">
+            <summary>
+            Serializes the specified <paramref name="obj"/> to a string
+            before sending the request
+            </summary>
+            <param name="obj">The object</param>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.WebRequestsClient`1.Deserialize``1(System.String)">
+            <summary>
+            Deserializes the specified <paramref name="rawServerResponse"/> to the requested type
+            </summary>
+            <typeparam name="TResponse">The type to deserialize to</typeparam>
+            <param name="rawServerResponse">The raw server response</param>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.WebRequestsClient`1.GetMediaType">
+            <summary>
+            Gets the media type header that is attached to the request before sending it
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.WebRequestsClient`1.GetEncoding">
+            <summary>
+            Gets the encoding that is attached to the request before sending it
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.WebRequestsClient`1.CreateAuthenticationHeader(`0)">
+            <summary>
+            Creates and returns a <see cref="T:System.Net.Http.Headers.AuthenticationHeaderValue"/> using the
+            specified <paramref name="authenticationArgs"/>
+            </summary>
+            <param name="authenticationArgs">The authentication arguments</param>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.WebRequestsClient`1.ParseErrorMessage(SHOPFLIX.WebRequestResult)">
+            <summary>
+            Attempts to parse the error message contained in the <paramref name="result"/>
+            </summary>
+            <param name="result">The result</param>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.WebRequestsClient`1.ParseDeserializationErrorMessage(SHOPFLIX.WebRequestResult,System.Type,System.Exception)">
+            <summary>
+            Attempts to parse the error message contained in the specified <paramref name="deserializationException"/>
+            that was thrown when attempting to deserialize the <paramref name="result"/> to the specified <paramref name="deserializationType"/>
+            </summary>
+            <param name="deserializationType">The type that response should have been deserialized to</param>
+            <param name="deserializationException">The deserialization exception that was thrown</param>
+            <param name="result">The result</param>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.WebRequestsClient`1.HandleNullAuthenticationArgs">
+            <summary>
+            Handles the null arguments
+            </summary>
+        </member>
+        <member name="M:SHOPFLIX.WebRequestsClient`1.CreateStringContent(System.Object)">
+            <summary>
+            Creates and returns the <see cref="T:System.Net.Http.StringContent"/> that represents
+            the specified <paramref name="content"/>
+            </summary>
+            <param name="content">The content</param>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.WebRequestsClient`1.ParseErrorMessageCore(SHOPFLIX.WebRequestResult)">
+            <summary>
+            Attempts to parse the error message contained in the <paramref name="response"/>
+            </summary>
+            <param name="response">The Web request result</param>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.WebRequestsClient`1.ParseErrorMessageCore(SHOPFLIX.WebRequestResult,System.Type,System.Exception)">
+            <summary>
+            Attempts to parse the error message contained in the specified <paramref name="deserializationException"/>
+            that was thrown when attempting to deserialize the <paramref name="response"/> to the specified <paramref name="deserializationType"/>
+            </summary>
+            <param name="deserializationType">The type that response should have been deserialized to</param>
+            <param name="deserializationException">The deserialization exception that was thrown</param>
+            <param name="response">The Web request result</param>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.WebRequestsClient`1.SetAuthorizationHeader(`0)">
+            <summary>
+            Sets the specified <paramref name="authentication"/> if any to the <see cref="P:SHOPFLIX.WebRequestsClient`1.Client"/>
+            </summary>
+            <param name="authentication">The token</param>
+        </member>
+        <member name="T:SHOPFLIX.WebRequestResult">
+            <summary>
+            A web response from a call to get generic object data from a HTTP server
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.WebRequestResult.DefaultHeaders">
+            <summary>
+            The default headers
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.WebRequestResult.ExceptionMessage">
+            <summary>
+            The error message for the exception
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.WebRequestResult.mException">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.WebRequestResult.Exception"/> property
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.WebRequestResult.mResult">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.WebRequestResult.Result"/>
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.WebRequestResult.Exception">
+            <summary>
+            The exception that was thrown
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.WebRequestResult.ErrorMessage">
+            <summary>
+            If something failed, this is the error message.
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.WebRequestResult.IsSuccessful">
+            <summary>
+            A flag indicating whether the request was successful 
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.WebRequestResult.StatusCode">
+            <summary>
+            The status code
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.WebRequestResult.StatusDescription">
+            <summary>
+            The status description
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.WebRequestResult.ContentType">
+            <summary>
+            The type of content returned by the server
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.WebRequestResult.Headers">
+            <summary>
+            All the response headers
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.WebRequestResult.RawServerResponse">
+            <summary>
+            The raw server response body
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.WebRequestResult.Result">
+            <summary>
+            The actual server response as an object
+            </summary>
+        </member>
+        <member name="M:SHOPFLIX.WebRequestResult.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:SHOPFLIX.WebRequestResult.#ctor(System.Exception)">
+            <summary>
+            Exception based constructor
+            </summary>
+            <param name="ex">The exception</param>
+        </member>
+        <member name="M:SHOPFLIX.WebRequestResult.ToString">
+            <summary>
+            Returns a string that represents the current object
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.WebRequestResult.ToUnsuccessfulWebRequestResult``1(System.String)">
+            <summary>
+            Creates and returns a <see cref="T:SHOPFLIX.WebRequestResult`1"/> from the current object
+            </summary>
+            <typeparam name="T">The type of the failable</typeparam>
+            <param name="customErrorMessage">The custom error message</param>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.WebRequestResult.op_Implicit(System.String)~SHOPFLIX.WebRequestResult">
+            <summary>
+            Creates a <see cref="T:SHOPFLIX.WebRequestResult"/> using the specified string as its error message
+            </summary>
+            <param name="s">The string</param>
+        </member>
+        <member name="M:SHOPFLIX.WebRequestResult.op_Implicit(System.Exception)~SHOPFLIX.WebRequestResult">
+            <summary>
+            Creates a <see cref="T:SHOPFLIX.Failable"/> using the message of the specified ex and its inner exceptions
+            as its error message
+            </summary>
+            <param name="ex">The exception</param>
+        </member>
+        <member name="T:SHOPFLIX.WebRequestResult`1">
+            <summary>
+            A web response from a call to get specific data from a HTTP server
+            </summary>
+            <typeparam name="TResult">The type of data to deserialize the raw body into</typeparam>
+        </member>
+        <member name="P:SHOPFLIX.WebRequestResult`1.Result">
+            <summary>
+            Casts the underlying object to the specified type
+            </summary>
+        </member>
+        <member name="M:SHOPFLIX.WebRequestResult`1.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:SHOPFLIX.WebRequestResult`1.#ctor(`0)">
+            <summary>
+            Result based constructor
+            </summary>
+            <param name="result">The result</param>
+        </member>
+        <member name="M:SHOPFLIX.WebRequestResult`1.#ctor(System.Exception)">
+            <summary>
+            Exception based constructor
+            </summary>
+            <param name="ex">The exception</param>
+        </member>
+        <member name="M:SHOPFLIX.WebRequestResult`1.ToSuccessfulWebRequestResult``1(System.Func{`0,``0})">
+            <summary>
+            Creates and returns a <see cref="T:SHOPFLIX.WebRequestResult`1"/> from the current object
+            </summary>
+            <typeparam name="T">The type of the failable</typeparam>
+            <param name="valueConverter">The method that converts an instance of type <typeparamref name="TResult"/> to <typeparamref name="T"/></param>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.WebRequestResult`1.ToString">
+            <summary>
+            Returns a string that represents the current object
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.WebRequestResult`1.op_Implicit(System.String)~SHOPFLIX.WebRequestResult{`0}">
+            <summary>
+            Creates a <see cref="T:SHOPFLIX.WebRequestResult`1"/> using the specified string as its error message
+            </summary>
+            <param name="s">The string</param>
+        </member>
+        <member name="M:SHOPFLIX.WebRequestResult`1.op_Implicit(System.Exception)~SHOPFLIX.WebRequestResult{`0}">
+            <summary>
+            Creates a <see cref="T:SHOPFLIX.WebRequestResult`1"/> using the message of the specified ex and its inner exceptions
+            as its error message
+            </summary>
+            <param name="ex">The exception</param>
+        </member>
+        <member name="M:SHOPFLIX.WebRequestResult`1.op_Implicit(`0)~SHOPFLIX.WebRequestResult{`0}">
+            <summary>
+            Creates a <see cref="T:SHOPFLIX.WebRequestResult`1"/> using the specified result as its result
+            </summary>
+            <param name="result">The result</param>
+        </member>
+        <member name="T:SHOPFLIX.BaseBoolToStringJsonConverter">
+            <summary>
+            A <see cref="T:Newtonsoft.Json.JsonConverter`1"/> that converts a <see cref="T:System.String"/> to a <see cref="T:System.Boolean"/>
+            </summary>
+        </member>
+        <member name="M:SHOPFLIX.BaseBoolToStringJsonConverter.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:SHOPFLIX.BaseBoolToStringJsonConverter.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Boolean,System.Boolean,Newtonsoft.Json.JsonSerializer)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SHOPFLIX.BaseBoolToStringJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter,System.Boolean,Newtonsoft.Json.JsonSerializer)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SHOPFLIX.BaseBoolToStringJsonConverter.GetTrueString">
+            <summary>
+            Gets the string representation for the <see cref="!:true"/> value
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.BaseBoolToStringJsonConverter.GetFalseString">
+            <summary>
+            Gets the string representation for the <see cref="!:false"/> value
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:SHOPFLIX.BaseEnumToStringJsonConverter`1">
             <summary>
@@ -1162,6 +3414,22 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="T:SHOPFLIX.BoolTo39AStatusStringJsonConverter">
+            <summary>
+            A <see cref="T:Newtonsoft.Json.JsonConverter`1"/> that is used for converting a <see cref="T:System.Boolean"/> to a '1/0' <see cref="T:System.String"/>
+            </summary>
+        </member>
+        <member name="M:SHOPFLIX.BoolTo39AStatusStringJsonConverter.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:SHOPFLIX.BoolTo39AStatusStringJsonConverter.GetFalseString">
+            <inheritdoc/>
+        </member>
+        <member name="M:SHOPFLIX.BoolTo39AStatusStringJsonConverter.GetTrueString">
+            <inheritdoc/>
+        </member>
         <member name="T:SHOPFLIX.BoolToAcceptOrDeclineStringJsonConverter">
             <summary>
             A <see cref="T:Newtonsoft.Json.JsonConverter`1"/> that converts a <see cref="T:System.Boolean"/> to an accept ("G") or a decline ("D") <see cref="T:System.String"/>
@@ -1172,10 +3440,10 @@
             Default constructor
             </summary>
         </member>
-        <member name="M:SHOPFLIX.BoolToAcceptOrDeclineStringJsonConverter.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Boolean,System.Boolean,Newtonsoft.Json.JsonSerializer)">
+        <member name="M:SHOPFLIX.BoolToAcceptOrDeclineStringJsonConverter.GetFalseString">
             <inheritdoc/>
         </member>
-        <member name="M:SHOPFLIX.BoolToAcceptOrDeclineStringJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter,System.Boolean,Newtonsoft.Json.JsonSerializer)">
+        <member name="M:SHOPFLIX.BoolToAcceptOrDeclineStringJsonConverter.GetTrueString">
             <inheritdoc/>
         </member>
         <member name="T:SHOPFLIX.BoolToEditReturnOrderToStringJsonConverter">
@@ -1188,11 +3456,11 @@
             Default constructor
             </summary>
         </member>
-        <member name="M:SHOPFLIX.BoolToEditReturnOrderToStringJsonConverter.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Boolean,System.Boolean,Newtonsoft.Json.JsonSerializer)">
-            <inheritdoc/>
+        <member name="M:SHOPFLIX.BoolToEditReturnOrderToStringJsonConverter.GetFalseString">
+            <inheritdoc/>   
         </member>
-        <member name="M:SHOPFLIX.BoolToEditReturnOrderToStringJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter,System.Boolean,Newtonsoft.Json.JsonSerializer)">
-            <inhertdoc/>
+        <member name="M:SHOPFLIX.BoolToEditReturnOrderToStringJsonConverter.GetTrueString">
+            <inheritdoc/>
         </member>
         <member name="T:SHOPFLIX.BoolToIntJsonConverter">
             <summary>
@@ -1226,6 +3494,27 @@
         <member name="M:SHOPFLIX.BoolToStringJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter,System.Boolean,Newtonsoft.Json.JsonSerializer)">
             <inheritdoc/>
         </member>
+        <member name="T:SHOPFLIX.DateOnlyToStringJsonConverter">
+            <summary>
+            A <see cref="T:Newtonsoft.Json.JsonConverter`1"/> that converts a <see cref="T:System.String"/> to a <see cref="T:System.DateOnly"/>
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.DateOnlyToStringJsonConverter.Format">
+            <summary>
+            The format
+            </summary>
+        </member>
+        <member name="M:SHOPFLIX.DateOnlyToStringJsonConverter.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:SHOPFLIX.DateOnlyToStringJsonConverter.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Nullable{System.DateOnly},System.Boolean,Newtonsoft.Json.JsonSerializer)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SHOPFLIX.DateOnlyToStringJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter,System.Nullable{System.DateOnly},Newtonsoft.Json.JsonSerializer)">
+            <inheritdoc/>
+        </member>
         <member name="T:SHOPFLIX.DateTimeOffsetToUnixTimeIntegerJsonConverter">
             <summary>
             A <see cref="T:Newtonsoft.Json.JsonConverter`1"/> that is used for converting an <see cref="T:System.Int32"/> that represents a UNIX timestamp in seconds to a <see cref="T:System.DateTimeOffset"/>
@@ -1240,6 +3529,39 @@
             <inheritdoc/>
         </member>
         <member name="M:SHOPFLIX.DateTimeOffsetToUnixTimeIntegerJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter,System.DateTimeOffset,Newtonsoft.Json.JsonSerializer)">
+            <inheritdoc/>
+        </member>
+        <member name="T:SHOPFLIX.DecimalToIntJsonConverter">
+            <summary>
+            A <see cref="T:Newtonsoft.Json.JsonConverter`1"/> that converts an <see cref="T:System.Int32"/> to a <see cref="T:System.Decimal"/>
+            </summary>
+        </member>
+        <member name="M:SHOPFLIX.DecimalToIntJsonConverter.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:SHOPFLIX.DecimalToIntJsonConverter.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Decimal,System.Boolean,Newtonsoft.Json.JsonSerializer)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SHOPFLIX.DecimalToIntJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter,System.Decimal,Newtonsoft.Json.JsonSerializer)">
+            <inheritdoc/>
+        </member>
+        <member name="T:SHOPFLIX.DictionaryOfStringAndStringToObjectJsonConverter">
+            <summary>
+            A <see cref="T:Newtonsoft.Json.JsonConverter`1"/> that attempts to convert a Json object to a <see cref="T:System.Collections.Generic.Dictionary`2"/> of
+            <see cref="T:System.String"/> and <see cref="T:System.String"/>
+            </summary>
+        </member>
+        <member name="M:SHOPFLIX.DictionaryOfStringAndStringToObjectJsonConverter.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:SHOPFLIX.DictionaryOfStringAndStringToObjectJsonConverter.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Collections.Generic.IReadOnlyDictionary{System.String,System.String},System.Boolean,Newtonsoft.Json.JsonSerializer)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SHOPFLIX.DictionaryOfStringAndStringToObjectJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter,System.Collections.Generic.IReadOnlyDictionary{System.String,System.String},Newtonsoft.Json.JsonSerializer)">
             <inheritdoc/>
         </member>
         <member name="T:SHOPFLIX.OrderStatusToStringJsonConverter">
@@ -1257,7 +3579,7 @@
         </member>
         <member name="T:SHOPFLIX.ReturnStatusToStringJsonConverter">
             <summary>
-            A <see cref="!:JsonConverter&lt;T&gt;"/> for converting an <see cref="T:SHOPFLIX.ReturnStatus"/> to a <see cref="T:System.String"/>
+            A <see cref="T:Newtonsoft.Json.JsonConverter`1"/> for converting an <see cref="T:SHOPFLIX.ReturnStatus"/> to a <see cref="T:System.String"/>
             </summary>
         </member>
         <member name="M:SHOPFLIX.ReturnStatusToStringJsonConverter.#ctor">
@@ -1292,6 +3614,216 @@
             </summary>
         </member>
         <member name="M:SHOPFLIX.VoucherFormatToStringJsonConverter.GetMapper">
+            <inheritdoc/>
+        </member>
+        <member name="T:SHOPFLIX.OrderStatusQueryArgumentConverter">
+            <summary>
+            A <see cref="T:SHOPFLIX.BaseQueryArgumentConverter`1"/> that is used for converting a <see cref="T:SHOPFLIX.OrderStatus"/> to a <see cref="T:System.String"/>
+            </summary>
+        </member>
+        <member name="M:SHOPFLIX.OrderStatusQueryArgumentConverter.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:SHOPFLIX.OrderStatusQueryArgumentConverter.Convert(SHOPFLIX.OrderStatus)">
+            <inheritdoc/>
+        </member>
+        <member name="T:SHOPFLIX.SHOPFLIXDateTimeQueyArgumentConverter">
+            <summary>
+            A <see cref="T:SHOPFLIX.BaseQueryArgumentConverter`1"/> that is used for converting a <see cref="T:System.DateTime"/> to a <see cref="T:System.String"/>
+            using the SHOPFLIX requested <see cref="F:SHOPFLIX.SHOPFLIXDateTimeQueyArgumentConverter.Format"/>
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.SHOPFLIXDateTimeQueyArgumentConverter.Format">
+            <summary>
+            The format that is used for serializing the value
+            </summary>
+        </member>
+        <member name="M:SHOPFLIX.SHOPFLIXDateTimeQueyArgumentConverter.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:SHOPFLIX.SHOPFLIXDateTimeQueyArgumentConverter.Convert(System.DateTime)">
+            <inheritdoc/>
+        </member>
+        <member name="T:SHOPFLIX.SHOPFLIXClient">
+            <summary>
+            An agent capable for making API requests to the SHOPFLIX web API
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.SHOPFLIXClient.CanNotAcceptOrderErrorMessage">
+            <summary>
+            Error message indicating that an order can not be accepted
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.SHOPFLIXClient.InvalidNumberOfPackagesMessage">
+            <summary>
+            Error message indicating that an invalid number of packages was specified at the <see cref="M:SHOPFLIX.SHOPFLIXClient.CreateVoucherAsync(System.Int32,System.UInt32)"/> method
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.SHOPFLIXClient.Credentials">
+            <summary>
+            The credentials
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.SHOPFLIXClient.ShouldUseTestEnvironment">
+            <summary>
+            A flag indicating whether the test environment should be used or not
+            </summary>
+        </member>
+        <member name="M:SHOPFLIX.SHOPFLIXClient.#ctor(SHOPFLIX.SHOPFLIXCredentials,System.Boolean)">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:SHOPFLIX.SHOPFLIXClient.GetOrdersWithParametersAsync(SHOPFLIX.OrderAPIArgs)">
+            <summary>
+            Gets the orders with additional information encapsulated in parameters
+            </summary>
+            <param name="args">The arguments</param>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.SHOPFLIXClient.GetOrdersAsync(SHOPFLIX.OrderAPIArgs)">
+            <summary>
+            Gets the orders
+            </summary>
+            <param name="args">The arguments</param>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.SHOPFLIXClient.GetOrderAsync(System.Int32)">
+            <summary>
+            Gets the order with the specified <paramref name="orderNumber"/>
+            </summary>
+            <param name="orderNumber">The order number</param>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.SHOPFLIXClient.AcceptOrDeclineOrderAsync(System.Int32,System.Boolean)">
+            <summary>
+            Accepts or declines the order with the specified <paramref name="orderNumber"/>
+            </summary>
+            <param name="orderNumber">The order number</param>
+            <param name="shouldOrderBeAccepted">A flag indicating whether the order should be accepted or rejected</param>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.SHOPFLIXClient.GetReturnsWithParametersAsync(SHOPFLIX.OrderAPIArgs)">
+            <summary>
+            Gets the returns with additional information encapsulated in parameters
+            </summary>
+            <param name="args">The arguments</param>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.SHOPFLIXClient.GetReturnsAsync(SHOPFLIX.OrderAPIArgs)">
+            <summary>
+            Gets the returns 
+            </summary>
+            <param name="args">The arguments</param>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.SHOPFLIXClient.GetReturnAsync(System.Int32)">
+            <summary>
+            Gets the return with the specified <paramref name="returnNumber"/>
+            </summary>
+            <param name="returnNumber">The return number</param>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.SHOPFLIXClient.GetShipmentsWithParametersAsync">
+            <summary>
+            Gets the shipments with additional information encapsulated in parameters
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.SHOPFLIXClient.GetShipments">
+            <summary>
+            Gets the shipments
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.SHOPFLIXClient.GetShipmentAsync(System.Int32)">
+            <summary>
+            Gets the shipment with the specified <paramref name="shipmentNumber"/>
+            </summary>
+            <param name="shipmentNumber">The shipment number</param>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.SHOPFLIXClient.CreateVoucherAsync(System.Int32,System.UInt32)">
+            <summary>
+            Creates a voucher for the shipment with the specified <paramref name="shipmentNumber"/>
+            </summary>
+            <param name="shipmentNumber">The shipment number</param>
+            <param name="numberOfPackages">The number of packages</param>
+            <remarks>
+            The number of packages should be equal or greater than 1.
+            </remarks>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.SHOPFLIXClient.CancelVoucherAsync(System.String)">
+            <summary>
+            Cancels the voucher with the specified <paramref name="shipmentTrackingNumber"/>
+            </summary>
+            <param name="shipmentTrackingNumber">The shipment tracking number</param>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.SHOPFLIXClient.PrintVoucherAsync(System.String,SHOPFLIX.VoucherFormat)">
+            <summary>
+            Prints the voucher with the specified <paramref name="shipmentTrackingNumber"/>
+            </summary>
+            <param name="shipmentTrackingNumber">The shipment tracking number</param>
+            <param name="voucherFormat">The voucher format</param>
+            <returns></returns>
+        </member>
+        <member name="M:SHOPFLIX.SHOPFLIXClient.ShipmentRouteAsync(System.String)">
+            <summary>
+            Retrieves tracking information for the voucher with the specified <paramref name="shipmentTrackingNumber"/>
+            </summary>
+            <param name="shipmentTrackingNumber">The shipment tracking number</param>
+            <returns></returns>
+        </member>
+        <member name="T:SHOPFLIX.SHOPFLIXCredentials">
+            <summary>
+            A set of SHOPFLIX credentials
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.SHOPFLIXCredentials.Username">
+            <summary>
+            The username
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.SHOPFLIXCredentials.Password">
+            <summary>
+            The password
+            </summary>
+        </member>
+        <member name="M:SHOPFLIX.SHOPFLIXCredentials.#ctor(System.String,System.String)">
+            <summary>
+            Default constructor
+            </summary>
+            <param name="username">The username</param>
+            <param name="password">The password</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="T:SHOPFLIX.SHOPFLIXWebRequestsClient">
+            <summary>
+            An implementation of the <see cref="T:SHOPFLIX.WebRequestResult`1"/> that uses a set of <see cref="T:SHOPFLIX.SHOPFLIXCredentials"/>
+            </summary>
+        </member>
+        <member name="F:SHOPFLIX.SHOPFLIXWebRequestsClient.mInstance">
+            <summary>
+            The member of the <see cref="P:SHOPFLIX.SHOPFLIXWebRequestsClient.Instance"/>
+            </summary>
+        </member>
+        <member name="P:SHOPFLIX.SHOPFLIXWebRequestsClient.Instance">
+            <summary>
+            A single instance of the <see cref="T:SHOPFLIX.SHOPFLIXWebRequestsClient"/>
+            </summary>
+        </member>
+        <member name="M:SHOPFLIX.SHOPFLIXWebRequestsClient.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:SHOPFLIX.SHOPFLIXWebRequestsClient.CreateAuthenticationHeader(SHOPFLIX.SHOPFLIXCredentials)">
             <inheritdoc/>
         </member>
         <member name="T:SHOPFLIX.SHOPFLIXConstants">

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace SHOPFLIX
 {
@@ -11,6 +7,11 @@ namespace SHOPFLIX
     /// </summary>
     public static class SHOPFLIXConstants
     {
+        /// <summary>
+        /// A keyword that is usually placed on a 'Result' property and is used for indicating a successful result
+        /// </summary>
+        public const string SuccessResultKeyword = "Success";
+
         /// <summary>
         /// Maps the <see cref="OrderStatus"/>es to their related <see cref="string"/>s
         /// </summary>
@@ -61,7 +62,7 @@ namespace SHOPFLIX
         /// </summary>
         public static IReadOnlyDictionary<VoucherFormat, string> VoucherFormatToStringMapper { get; } = new Dictionary<VoucherFormat, string>()
         {
-            {VoucherFormat.Pdf , "PDF" },
+            {VoucherFormat.PDF , "PDF" },
             {VoucherFormat.Clean, "Clean" }
         };
     }

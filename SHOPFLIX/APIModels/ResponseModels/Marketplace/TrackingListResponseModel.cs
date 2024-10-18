@@ -1,15 +1,10 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SHOPFLIX
 {
     /// <summary>
-    /// Representing the tracking list used at <see cref="ShipingRouteResponseModel"/>
+    /// Representing the tracking list used at <see cref="ShipmentRouteResponseModel"/>
     /// </summary>
     public class TrackingListResponseModel
     {
@@ -36,7 +31,7 @@ namespace SHOPFLIX
         [JsonProperty("EntityID")]
         public string EntityId
         {
-            get => mEntityId ?? String.Empty;
+            get => mEntityId ?? string.Empty;
 
             set => mEntityId = value;
         }
@@ -48,12 +43,12 @@ namespace SHOPFLIX
         [JsonProperty("StationName")]
         public string StationName
         {
-            get => mStationName ?? String.Empty;
+            get => mStationName ?? string.Empty;
 
             set => mStationName = value;
         }
 
-        // Array TO BE FIXED
+        // TODO: array με την πορεία της αποστολής ανά στάδιο 
 
 
         #endregion

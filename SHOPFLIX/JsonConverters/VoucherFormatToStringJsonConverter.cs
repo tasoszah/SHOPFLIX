@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace SHOPFLIX
 {
@@ -22,7 +22,7 @@ namespace SHOPFLIX
 
         /// <inheritdoc/>
         #region Protected Methods
-        protected override IReadOnlyDictionary<VoucherFormat, string> GetMapper() 
+        protected override IReadOnlyDictionary<VoucherFormat, string> GetMapper()
             => SHOPFLIXConstants.VoucherFormatToStringMapper;
 
         #endregion

@@ -1,10 +1,7 @@
 ﻿using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SHOPFLIX
 {
@@ -33,14 +30,14 @@ namespace SHOPFLIX
         /// A flag that indicates if the shipment already exists
         /// </summary>
         [JsonProperty("ShipmentAlreadyExist")]
-        public bool DoesShipmentAlreadyExist { get; set; }
+        internal bool DoesShipmentAlreadyExist { get; set; }
 
         /// <summary>
         /// The result
         /// </summary>
         [AllowNull]
         [JsonProperty("Result")]
-        public string Result
+        internal string Result
         {
             get => mResult ?? string.Empty;
 
@@ -52,7 +49,7 @@ namespace SHOPFLIX
         /// </summary>
         [AllowNull]
         [JsonProperty("Errors")]
-        public IEnumerable<ErrorResponseModel> Errors
+        internal IEnumerable<ErrorResponseModel> Errors
         {
             get => mErrors ?? Enumerable.Empty<ErrorResponseModel>();
 

@@ -1,10 +1,5 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SHOPFLIX
 {
@@ -36,7 +31,7 @@ namespace SHOPFLIX
         [JsonProperty("name")]
         public string Name
         {
-            get => mName ?? String.Empty;
+            get => mName ?? string.Empty;
 
             set => mName = value;
         }
@@ -48,7 +43,7 @@ namespace SHOPFLIX
         [JsonProperty("tracking_url")]
         public string TrackingUrl
         {
-            get => mTrackingUrl ?? String.Empty;
+            get => mTrackingUrl ?? string.Empty;
 
             set => mTrackingUrl = value;
         }

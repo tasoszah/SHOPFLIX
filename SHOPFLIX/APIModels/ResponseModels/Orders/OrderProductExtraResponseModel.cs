@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System;
 
 namespace SHOPFLIX
 {
@@ -14,6 +15,20 @@ namespace SHOPFLIX
         /// </summary>
         [JsonProperty("gift_wrapper")]
         public bool IsGiftWrap { get; set; }
+
+        /// <summary>
+        /// The delivery date
+        /// </summary>
+        [JsonProperty("delivery_date")]
+        [JsonConverter(typeof(DateOnlyToStringJsonConverter))]
+        public DateOnly DeliveryDate { get; set; }
+
+        /// <summary>
+        /// The pickup date
+        /// </summary>
+        [JsonProperty("pickup_date")]
+        [JsonConverter(typeof(DateOnlyToStringJsonConverter))]
+        public DateOnly PickupDate { get; set; }
 
         #endregion
 

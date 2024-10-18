@@ -1,10 +1,7 @@
 ﻿using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SHOPFLIX
 {
@@ -29,6 +26,16 @@ namespace SHOPFLIX
         /// The member of the <see cref="Result"/> property
         /// </summary>
         private string? mResult;
+
+        /// <summary>
+        /// The member of the <see cref="Voucher"/> property
+        /// </summary>
+        private string? mVoucher;
+
+        /// <summary>
+        /// The member of the <see cref="Errors"/> property
+        /// </summary>
+        private IEnumerable<ErrorResponseModel>? mErrors;
 
         #endregion
 
@@ -61,7 +68,19 @@ namespace SHOPFLIX
         {
             get => mVoucherDataReturnList ?? Enumerable.Empty<string>();
 
-            set => mVoucherDataReturnList = value;  
+            set => mVoucherDataReturnList = value;
+        }
+
+        /// <summary>
+        /// The voucher in Base64 format
+        /// </summary>
+        [AllowNull]
+        [JsonProperty("Voucher")]
+        public string Voucher
+        {
+            get => mVoucher ?? string.Empty;
+
+            set => mVoucher = value;
         }
 
         /// <summary>
@@ -69,11 +88,23 @@ namespace SHOPFLIX
         /// </summary>
         [AllowNull]
         [JsonProperty("Success")]
-        public string Result
+        internal string Result
         {
-            get => mResult ?? String.Empty;
+            get => mResult ?? string.Empty;
 
             set => mResult = value;
+        }
+
+        /// <summary>
+        /// The errors
+        /// </summary>
+        [AllowNull]
+        [JsonProperty("Errors")]
+        internal IEnumerable<ErrorResponseModel> Errors
+        {
+            get => mErrors ?? Enumerable.Empty<ErrorResponseModel>();
+
+            set => mErrors = value;
         }
 
         #endregion

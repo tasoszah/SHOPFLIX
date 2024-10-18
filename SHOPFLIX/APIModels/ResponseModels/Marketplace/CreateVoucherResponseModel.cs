@@ -1,10 +1,7 @@
 ﻿using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SHOPFLIX
 {
@@ -21,7 +18,7 @@ namespace SHOPFLIX
         private string? mShipmentNumber;
 
         /// <summary>
-        /// The member of the <see cref="TrackingNumber"/> property
+        /// The member of the <see cref="TrackingNumbers"/> property
         /// </summary>
         private IEnumerable<string>? mTrackingNumbers;
 
@@ -44,7 +41,7 @@ namespace SHOPFLIX
         /// </summary>
         [AllowNull]
         [JsonProperty("ShipmentNumber")]
-        public string ShipmentNumber 
+        public string ShipmentNumber
         {
             get => mShipmentNumber ?? string.Empty;
 
@@ -56,7 +53,7 @@ namespace SHOPFLIX
         /// </summary>
         [AllowNull]
         [JsonProperty("TrackingNumbers")]
-        public IEnumerable<string> TrackingNumber
+        public IEnumerable<string> TrackingNumbers
         {
             get => mTrackingNumbers ?? Enumerable.Empty<string>();
 
@@ -68,9 +65,9 @@ namespace SHOPFLIX
         /// </summary>
         [AllowNull]
         [JsonProperty("ShipmentMasterId")]
-        public string ShipmentMasterId 
+        public string ShipmentMasterId
         {
-            get => mShipmentMasterId ?? String.Empty;
+            get => mShipmentMasterId ?? string.Empty;
 
             set => mShipmentMasterId = value;
         }
@@ -79,16 +76,16 @@ namespace SHOPFLIX
         /// A flag that indicates if the shipment already exists
         /// </summary>
         [JsonProperty("ShipmentAlreadyExists")]
-        public bool DoesShipmentAlreadyExists { get; set; }
+        internal bool DoesShipmentAlreadyExists { get; set; }
 
         /// <summary>
         /// The result
         /// </summary>
         [AllowNull]
         [JsonProperty("Result")]
-        public string Result
+        internal string Result
         {
-            get => mResult ?? String.Empty;
+            get => mResult ?? string.Empty;
 
             set => mResult = value;
         }

@@ -1,9 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Newtonsoft.Json;
 
 namespace SHOPFLIX
 {
@@ -27,7 +23,7 @@ namespace SHOPFLIX
         #region Protected Methods
 
         /// <inheritdoc/>
-        protected override IReadOnlyDictionary<OrderStatus, string> GetMapper() 
+        protected override IReadOnlyDictionary<OrderStatus, string> GetMapper()
             => SHOPFLIXConstants.OrderStatusToStringMapper;
 
         #endregion

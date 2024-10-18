@@ -1,13 +1,12 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SHOPFLIX
 {
+    /// <summary>
+    /// Represents a set of extra information related to an order product
+    /// </summary>
     public class OrderProductResponseModel : BaseProductResponseModel
     {
         #region Private Members
@@ -15,20 +14,45 @@ namespace SHOPFLIX
         /// <summary>
         /// The member of the <see cref="Extra"/> property
         /// </summary>
-        private IEnumerable<OrderProductExtraResponseModel>? mExtra;
+        private OrderProductExtraResponseModel? mExtra;
 
         #endregion
 
         #region Public Properties
 
         /// <summary>
+        /// The product url 
+        /// </summary>
+        [JsonProperty("product_url")]
+        public Uri? ProductUrl { get; set; }
+
+        /// <summary>
+        /// The status of 39A
+        /// </summary>
+        [JsonProperty("status_a39")]
+        [JsonConverter(typeof(BoolTo39AStatusStringJsonConverter))]
+        public bool IsStatus39A { get; set; }
+
+        /// <summary>
+        /// The total price
+        /// </summary>
+        [JsonProperty("total_price")]
+        public decimal TotalPrice { get; set; }
+
+        /// <summary>
+        /// The extended attributes 
+        /// </summary>
+        [JsonProperty("extended_attributes")]
+        public object? ExtendedAttributes { get; set; }
+
+        /// <summary>
         /// Extra information
         /// </summary>
         [AllowNull]
         [JsonProperty("extra")]
-        public IEnumerable<OrderProductExtraResponseModel> Extra
+        public OrderProductExtraResponseModel Extra
         {
-            get => mExtra ?? Enumerable.Empty<OrderProductExtraResponseModel>();
+            get => mExtra ??= new OrderProductExtraResponseModel();
 
             set => mExtra = value;
         }

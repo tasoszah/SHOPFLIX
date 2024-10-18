@@ -23,7 +23,7 @@ namespace SHOPFLIX
         #region Protected Methods
 
         /// <inheritdoc/>
-        protected override IReadOnlyDictionary<ShipmentStatus, string> GetMapper() 
+        protected override IReadOnlyDictionary<ShipmentStatus, string> GetMapper()
             => SHOPFLIXConstants.ShipmentStatusToStringMapper;
 
         #endregion

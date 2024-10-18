@@ -9,7 +9,7 @@ namespace SHOPFLIX
     public class BoolToStringJsonConverter : JsonConverter<bool>
     {
         #region Constructors
-        
+
         /// <summary>
         /// Default constructor
         /// </summary>
@@ -23,11 +23,11 @@ namespace SHOPFLIX
         #region Public Methods
 
         /// <inheritdoc/>
-        public override bool ReadJson(JsonReader reader, Type objectType, bool existingValue, bool hasExistingValue, JsonSerializer serializer) 
+        public override bool ReadJson(JsonReader reader, Type objectType, bool existingValue, bool hasExistingValue, JsonSerializer serializer)
             => serializer.Deserialize<string>(reader) == "Y";
 
         /// <inheritdoc/>
-        public override void WriteJson(JsonWriter writer, bool value, JsonSerializer serializer) 
+        public override void WriteJson(JsonWriter writer, bool value, JsonSerializer serializer)
             => writer.WriteValue(value ? "Y" : "N");
 
         #endregion
